@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>工研院電光所 國際技術情報週報</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: #f4f6f9;
+      color: #1a2a3a;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0d2b4e 0%, #1a4a7a 100%);
+      color: #fff;
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    header h1 { font-size: 1.2rem; letter-spacing: 0.04em; }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .controls label {
+      font-size: 0.88rem;
+      opacity: 0.85;
+      white-space: nowrap;
+    }
+
+    #report-select {
+      padding: 0.4rem 0.75rem;
+      border-radius: 4px;
+      border: none;
+      font-size: 0.9rem;
+      background: #fff;
+      color: #1a2a3a;
+      cursor: pointer;
+      min-width: 170px;
+    }
+
+    #status-bar {
+      background: #e8eef4;
+      border-bottom: 1px solid #c8d8e8;
+      padding: 0.5rem 2rem;
+      font-size: 0.82rem;
+      color: #4a6a8a;
+      flex-shrink: 0;
+    }
+
+    #report-frame {
+      flex: 1;
+      border: none;
+      width: 100%;
+      background: #fff;
+    }
+
+    #loading-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(244,246,249,0.85);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      color: #1a4a7a;
+      z-index: 100;
+    }
+
+    @media (max-width: 600px) {
+      header { flex-direction: column; align-items: flex-start; }
+      #report-select { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>工研院電光所 國際技術情報週報</h1>
+  <div class="controls">
+    <label for="report-select">選擇週報：</label>
+    <select id="report-select" onchange="loadReport(this.value)">
+      <option value="">載入中...</option>
+    </select>
+  </div>
+</header>
+
+<div id="status-bar">正在讀取週報清單...</div>
+
+<div id="loading-overlay">載入中，請稍候...</div>
+
+<iframe id="report-frame" title="週報內容"></iframe>
+
+<script>
+  const statusBar = document.getElementById('status-bar');
+  const select = document.getElementById('report-select');
+  const frame = document.getElementById('report-frame');
+  const overlay = document.getElementById('loading-overlay');
+
+  // 從頁面所在路徑推算 base URL（相對路徑即可，因為 index.html 在 docs/ 下）
+  // 使用相對路徑讀取同目錄的 HTML 檔案，無需 GitHub API 認證
+  async function fetchReportList() {
+    // 策略：用 GitHub Pages 的相對路徑，透過一個已知的清單 JSON
+    // 若 reports.json 不存在，則改用 fetch HEAD 的方式偵測
+    // 優先嘗試 reports.json（由 GitHub Actions 每次更新）
+    try {
+      const res = await fetch('reports.json', { cache: 'no-cache' });
+      if (res.ok) {
+        const data = await res.json();
+        return data.reports || [];
+      }
+    } catch (_) {}
+
+    // 備用：掃描過去 52 週，逐一 HEAD 確認是否存在
+    const found = [];
+    const today = new Date();
+    for (let i = 0; i < 52; i++) {
+      const d = new Date(today);
+      d.setDate(d.getDate() - i * 7);
+      const dateStr = d.toISOString().slice(0, 10);
+      const filename = `${dateStr}_report.html`;
+      try {
+        const r = await fetch(filename, { method: 'HEAD', cache: 'no-cache' });
+        if (r.ok) found.push(filename);
+      } catch (_) {}
+    }
+    return found;
+  }
+
+  async function init() {
+    try {
+      const reports = await fetchReportList();
+
+      if (reports.length === 0) {
+        select.innerHTML = '<option value="">尚無週報</option>';
+        statusBar.textContent = '尚未有任何週報，請等待系統首次執行。';
+        overlay.style.display = 'none';
+        return;
+      }
+
+      // 按日期降序排列
+      reports.sort((a, b) => b.localeCompare(a));
+
+      select.innerHTML = reports
+        .map(f => {
+          const dateLabel = f.replace('_report.html', '');
+          return `<option value="${f}">${dateLabel}</option>`;
+        })
+        .join('');
+
+      loadReport(reports[0]);
+    } catch (err) {
+      statusBar.textContent = `讀取失敗：${err.message}`;
+      overlay.style.display = 'none';
+    }
+  }
+
+  function loadReport(filename) {
+    if (!filename) return;
+    const dateLabel = filename.replace('_report.html', '');
+    statusBar.textContent = `目前顯示：${dateLabel} 週報`;
+    overlay.style.display = 'flex';
+    frame.onload = () => { overlay.style.display = 'none'; };
+    frame.src = filename;
+    // 同步 select
+    select.value = filename;
+  }
+
+  init();
+</script>
+
+</body>
+</html>

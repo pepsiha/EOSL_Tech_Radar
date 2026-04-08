@@ -1,0 +1,109 @@
+[
+  {
+    "keyword": {
+      "tier1": "光通訊",
+      "tier2": "矽光子",
+      "tier3": "CPO",
+      "search_levels": [
+        "tier1+tier2+tier3",
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": "tier1+tier2+tier3",
+    "articles": [
+      {
+        "title": "Next-Generation Photonics and Microwave Technologies for Quantum Sensing and Digital Twins : vTools Events | vTools IEEE",
+        "url": "https://events.vtools.ieee.org/m/356119",
+        "published_date": "",
+        "content": "Sub-THz Phased Array Antenna in Package for Sensing Application\n\n主講人臺灣大學電信所吳宗霖 教授\n\n主講人臺灣大學電信所吳宗霖 教授\n\n主持人中央大學電機系許晉瑋 教授\n\n主持人中央大學電機系許晉瑋 教授\n\n14:00 - 14:30\n\n14:00 - 14:30\n\nCMOS SPAD 原理與其應用\n\nCMOS SPAD 原理與其應用\n\n主講人元智大學電機系吉光微電子顧問巫朝陽 助理教授\n\n主講人元智大學電機系吉光微電子顧問巫朝陽 助理教授\n\n主持人中央大學電機系許晉瑋 教授\n\n主持人中央大學電機系許晉瑋 教授\n\n14:30 - 15:00\n\n14:30 - 15:00\n\nNovel VCSEL flip chip for sensing application\n\nNovel VCSEL flip chip for sensing application\n\n主講人晶智達光電徐子傑 研發資深處長\n\n主講人晶智達光電徐子傑 研發資深處長\n\n主持人中央大學電機系許晉瑋 教授\n\n主持人中央大學電機系許晉瑋 教授\n\n15:00 - 15:15\n\n15:00 - 15:15\n\nBreak\n\nBreak\n\n15:15 - 16:05\n\n15:15 - 16:05\n\nAR/VR for digital Twins\n\nAR/VR for digital Twins\n\n主講人University of Central Florida吳詩聰 院士\n\n主講人University of Central Florida吳詩聰 院士\n\n主持人臺灣大學光電所李君浩 教授\n\n主持人臺灣大學光電所李君浩 教授\n\n16:05\n\n16:05\n\n活動結束\n\n### Media [...] 主持人臺灣大學光電所李君浩 教授\n\n16:05\n\n16:05\n\n活動結束\n\n### Media\n\n|  |  |  |\n --- \n| Event Photo collected | Event Photo collected | 4.22 MiB |\n| Flyer | Agenda | 246.21 KiB |\n\n活動結束\n\n### Media\n\n|  |  |  |\n --- \n| Event Photo collected | Event Photo collected | 4.22 MiB |\n| Flyer | Agenda | 246.21 KiB |\n\nIEEE App [...] |\n\n|\n|  |\n\n|\n\n|\n|  |\n\n|\n\n|\n|  |\n\n|\n\n報到\n\n報到\n\n9:00 - 9:10\n\n9:00 - 9:10\n\n開幕式\n\n開幕式\n\n清華大學物理系 果尚志 教授臺灣大學光電所 吳育任 教授\n\n清華大學物理系 果尚志 教授臺灣大學光電所 吳育任 教授\n\n9:00 - 9:10\n\n9:00 - 9:10\n\n相位鍵移雷射二極體通信量子密鑰協定概觀\n\n相位鍵移雷射二極體通信量子密鑰協定概觀\n\n PSK Quantum Key Protocols for Laser-Diode Communication Link\n\n PSK Quantum Key Protocols for Laser-Diode Communication Link\n\n主講人臺灣大學光電所林恭如 教授\n\n主講人臺灣大學光電所林恭如 教授\n\n主持人臺灣大學光電所吳育任 教授\n\n主持人臺灣大學光電所吳育任 教授\n\n9:40 - 10:10\n\n9:40 - 10:10\n\nDesign quantum photonic components and circuits with Ansys\n\nDesign quantum photonic components and circuits with Ansys\n\n主講人AnsysDr. James Pond\n\n主講人AnsysDr. James Pond\n\n主持人臺灣大學光電所吳育任 教授\n\n主持人臺灣大學光電所吳育任 教授\n\n10:10 - 10:40\n\n10:10 - 10:40\n\nIntegrated Photonic Quantum Sources for Sensing Applications\n\nIntegrated Photonic Quantum Sources for Sensing Applications",
+        "source_domain": "events.vtools.ieee.org"
+      },
+      {
+        "title": "《IEEE量子电子学精选专题期刊》文章：专家探讨光学调制器和集成光子学的未来 – IEEE中国",
+        "url": "https://cn.ieee.org/2024/12/11/%E3%80%8Aieee%E9%87%8F%E5%AD%90%E7%94%B5%E5%AD%90%E5%AD%A6%E7%B2%BE%E9%80%89%E4%B8%93%E9%A2%98%E6%9C%9F%E5%88%8A%E3%80%8B%E6%96%87%E7%AB%A0%EF%BC%9A%E4%B8%93%E5%AE%B6%E6%8E%A2%E8%AE%A8%E5%85%89/",
+        "published_date": "",
+        "content": "# IEEE中国\n\nIEEE\n\n# 《IEEE量子电子学精选专题期刊》文章：专家探讨光学调制器和集成光子学的未来\n\n来自美国领先行业和学术领域的专家在本次访谈中分享了他们的宝贵观点.\n\n光学和光子调制器是技术先进的设备，能够根据输入信号操控光的属性，如功率和相位。硅光子调制器应用广泛，在光学数据通信、人工智能（AI）等领域都有其角色。然而，这些调制器面临带宽限制和操作稳定性问题，这些问题源于硅及其他实际约束的基本性质。\n\n这篇名为《光学调制的未来》的访谈，发表于2024年9月5日的《IEEE量子电子学精选专题期刊》第30卷第4期。专家小组成员包括Di Liang教授，他在硅光子学和异质光子集成领域从事研究与产品开发超过17年；Mengyue Xu博士，密歇根大学的知名研究员，专注于铌酸锂器件和硅光子学的研究；Long Chen博士，思科杰出工程师，曾在Acacia工作；Haisheng Rong博士，英特尔实验室的高级首席工程师和研发经理；以及Andreas Bechtolsheim博士，Sun Microsystems和Arista Networks的联合创始人。\n\n访谈强调，必须超越传统平台，如大块硅、磷化铟和常规铌酸锂。他们指出，材料多样性、制造工艺和光子集成电路设计的多样性是该领域创新的关键驱动因素。这一转变正在推动新型调制器材料、配置和集成技术的发展，包括薄膜铌酸锂、III-V族外调制激光器、薄膜钛酸钡调制器以及垂直金属氧化物半导体电容器结构。\n\n这些新进展预计将在多个新兴的下一代应用领域产生重大影响，包括人工智能、量子信息处理、增强现实/虚拟现实、类脑计算、调频连续波激光雷达、微波光子学以及计量学和光谱学。值得注意的是，薄膜铌酸锂调制器在超导电路的量子-经典接口方面展现了巨大的潜力。 [...] 专家们还强调，技术瓶颈、高昂的生产成本、器件非均匀性、大量时间投入以及缺乏标准化流程是该领域面临的一些挑战。要克服这些问题，需要开发一套全面的协同设计能力和平台，这要求光子和电气芯片设计师、供应商、晶圆厂以及封装和测试服务提供商之间的紧密合作。\n\nLiang教授在最后总结说：“人工智能的空前发展以及当前全球地缘政治局势，促使对半导体技术的投资大幅增加。这为学术界和工业界之间的合作提供了更多资金机会。通过抓住这一机会，我们可以确保创新源源不断地推动技术进步，并彻底改变这一领域。”\n\n参考文献\n\n原文标题：光学调制的未来\n\n期刊：IEEE量子电子学精选专题期刊\n\nDOI：10.1109/JSTQE.2024.3448914\n\n© Copyright 2026 IEEE – All rights reserved. Use of this website signifies your agreement to the IEEE Terms and Conditions.  \nA public charity, IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefit of humanity.",
+        "source_domain": "cn.ieee.org"
+      },
+      {
+        "title": "《IEEE量子电子学精选专题期刊》文章：专家探讨光学调制器和集成光子学的未来 – IEEE中国",
+        "url": "https://cn.ieee.org/2024/12/11/《ieee量子电子学精选专题期刊》文章：专家探讨光",
+        "published_date": "",
+        "content": "# IEEE中国\n\nIEEE\n\n# 《IEEE量子电子学精选专题期刊》文章：专家探讨光学调制器和集成光子学的未来\n\n来自美国领先行业和学术领域的专家在本次访谈中分享了他们的宝贵观点.\n\n光学和光子调制器是技术先进的设备，能够根据输入信号操控光的属性，如功率和相位。硅光子调制器应用广泛，在光学数据通信、人工智能（AI）等领域都有其角色。然而，这些调制器面临带宽限制和操作稳定性问题，这些问题源于硅及其他实际约束的基本性质。\n\n这篇名为《光学调制的未来》的访谈，发表于2024年9月5日的《IEEE量子电子学精选专题期刊》第30卷第4期。专家小组成员包括Di Liang教授，他在硅光子学和异质光子集成领域从事研究与产品开发超过17年；Mengyue Xu博士，密歇根大学的知名研究员，专注于铌酸锂器件和硅光子学的研究；Long Chen博士，思科杰出工程师，曾在Acacia工作；Haisheng Rong博士，英特尔实验室的高级首席工程师和研发经理；以及Andreas Bechtolsheim博士，Sun Microsystems和Arista Networks的联合创始人。\n\n访谈强调，必须超越传统平台，如大块硅、磷化铟和常规铌酸锂。他们指出，材料多样性、制造工艺和光子集成电路设计的多样性是该领域创新的关键驱动因素。这一转变正在推动新型调制器材料、配置和集成技术的发展，包括薄膜铌酸锂、III-V族外调制激光器、薄膜钛酸钡调制器以及垂直金属氧化物半导体电容器结构。\n\n这些新进展预计将在多个新兴的下一代应用领域产生重大影响，包括人工智能、量子信息处理、增强现实/虚拟现实、类脑计算、调频连续波激光雷达、微波光子学以及计量学和光谱学。值得注意的是，薄膜铌酸锂调制器在超导电路的量子-经典接口方面展现了巨大的潜力。 [...] 专家们还强调，技术瓶颈、高昂的生产成本、器件非均匀性、大量时间投入以及缺乏标准化流程是该领域面临的一些挑战。要克服这些问题，需要开发一套全面的协同设计能力和平台，这要求光子和电气芯片设计师、供应商、晶圆厂以及封装和测试服务提供商之间的紧密合作。\n\nLiang教授在最后总结说：“人工智能的空前发展以及当前全球地缘政治局势，促使对半导体技术的投资大幅增加。这为学术界和工业界之间的合作提供了更多资金机会。通过抓住这一机会，我们可以确保创新源源不断地推动技术进步，并彻底改变这一领域。”\n\n参考文献\n\n原文标题：光学调制的未来\n\n期刊：IEEE量子电子学精选专题期刊\n\nDOI：10.1109/JSTQE.2024.3448914\n\n© Copyright 2026 IEEE – All rights reserved. Use of this website signifies your agreement to the IEEE Terms and Conditions.  \nA public charity, IEEE is the world’s largest technical professional organization dedicated to advancing technology for the benefit of humanity.",
+        "source_domain": "cn.ieee.org"
+      }
+    ]
+  },
+  {
+    "keyword": {
+      "tier1": "化合物半導體",
+      "tier2": "碳化矽",
+      "tier3": "資料中心應用",
+      "search_levels": [
+        "tier1+tier2+tier3",
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": "tier1+tier2+tier3",
+    "articles": [
+      {
+        "title": "ChemLLM: A Chemical Large Language Model",
+        "url": "https://arxiv.org/pdf/2402.06852",
+        "published_date": "",
+        "content": "The research team, through a series of complex chem-ical reactions and physical processing, successfully introduced functional groups onto the graphene surface, enhancing its interaction with carbon nanotubes. Addi-tionally, by controlling the synthesis con-ditions, the researchers were able to adjust the porous structure and surface character-istics of the composite material, thereby optimizing its performance in supercapaci-S8 tors. Experimental results demonstrated that this new type of composite mate-rial exhibited superior energy storage per-formance in supercapacitor applications. [...] After thousands of charge-discharge cycle tests, the material displayed excellent cyclic stability, with almost no decay in charge-discharge effi-ciency. This discovery implies that this new type of composite material is not only suitable for high-performance energy stor-age but also has the potential for long-term applications.\nOverall, this research not only showcased the development of a new type of energy storage material but also proved that modifying graphene and car-bon nanotubes through chemical and phys-ical methods could significantly enhance the performance of supercapacitors. This breakthrough provides a new direction for the development of efficient energy storage technologies and opens up new possibili-ties for future energy storage solutions. [...] ChemLLM A study developed a new type of en-ergy storage material based on modified graphene and porous carbon nanotubes.\nThrough complex chemical reactions, the researchers successfully introduced func-tional groups onto the graphene surface, improving its interaction with carbon nan-otubes. The composite material exhibited superior energy storage performance in su-percapacitor applications, including high specific surface area, excellent electrical conductivity, and enhanced electrochem-ical stability. The material also showed excellent cyclic stability, implying its po-tential for long-term applications.\nThis breakthrough provides a new direction for the development of efficient energy stor-age technologies.",
+        "source_domain": "arxiv.org"
+      },
+      {
+        "title": "氧化石墨烯吸附增强应用的展望",
+        "url": "https://arxiv.org/pdf/1705.00523",
+        "published_date": "",
+        "content": "M. Thommes, D. Su, E.A. Stach, R.S. Ruoff, Carbon-based supercapacitors produced by activation of graphene, Science, 332 (2011) 1537-1541.  P. Li, H. Gao, Y. Wang, Uptake of Ni(II) from aqueous solution onto graphene oxide: Investigated by batch and modeling techniques, J. Mol. Liq., 227 (2017) 303-308.  J. Wang, Z.M. Chen, B.L. Chen, Adsorption of Polycyclic Aromatic Hydrocarbons by Graphene and Graphene Oxide Nanosheets, Environmental Science & Technology, 48 (2014) 4817-4825.  D.R. Dreyer, H.P. Jia, C.W. Bielawski, Graphene Oxide: A Convenient Carbocatalyst for Facilitating Oxidation and Hydration Reactions, Angew Chem Int Edit, 49 (2010) 6813-6816.  L. Sun, H. Yu, B. Fugetsu, Graphene oxide adsorption enhanced by in situ reduction with sodium hydrosulfite to remove acridine orange [...] 物后进行双靶向物吸附，直至第二次吸附平衡出现（第一种靶向物浓度变化极小时可不计） 。提出该 方法主要用于考察不同类型氧基团、结构对吸附的贡献。 参考文献  M.D. Stoller, S.J. Park, Y.W. Zhu, J.H. An, R.S. Ruoff, Graphene-based ultracapacitors, Nano Lett, 8 (2008) 3498-3502.  L. Zhang, F. Zhang, X. Yang, G. Long, Y. Wu, T. Zhang, K. Leng, Y. Huang, Y. Ma, A. Yu, Y. Chen, Porous 3D graphene-based bulk materials with exceptional high surface area and excellent conductivity for supercapacitors, Sci Rep, 3 (2013) 1408.  A. Klechikov, G. Mercier, T. Sharifi, I.A. Baburin, G. Seifert, A.V. Talyzin, Hydrogen storage in high surface area graphene scaffolds, Chem Commun (Camb), 51 (2015) 15280-15283.  Y. Zhu, S. Murali, M.D. Stoller, K.J. Ganesh, W. Cai, P.J. Ferreira, A. Pirkle, R.M. Wallace, K.A. Cychosz, M. Thommes, D. Su, E.A. Stach, R.S. Ruoff, Carbon-based [...] Carbon of different morphologies and structures normally demonstrate distinct capabilities to adsorption-typed decontaminations. Graphene oxide is regarded as the oxidative derivative of graphene, maintaining its 2D morphology-featuring structure while location-dependently immobilized with a large amount of various oxygen-involving functional moieties on both sides. Free-standing graphene oxide tends to fully unfold in water and behave in macromolecular-like Brownian motion. Therefore, high-performance adsorption occurs during the process of interacting with large amount of sorbates, during which an unevenness of effective adsorptive site distribution turns out for targeted matter due to functional group-to-sorbate interaction mechanism differentiation as well as groups’ inherent location",
+        "source_domain": "arxiv.org"
+      },
+      {
+        "title": "[PDF] 氢能或电能驱动人工光合作用固定CO2 合成糖 - arXiv",
+        "url": "https://arxiv.org/pdf/1009.0310",
+        "published_date": "",
+        "content": "Weinheim. doi:10.1002/14356007.a11_619. \n\n40. KATSUMI, O. and Y. TADASHI, PRODUCTION OF FORMALDEHYDE BY CATALYTIC \n\nHYDROGENATION OF CARBON DIOXIDE . 1996. \n\n41. Lee, D.K., D.S. Kim, and S.W. Kim, Selective formation of formald ehyde from carbon dioxide and \n\nhydrogen over PtCu/SiO2. Applied Organometallic Chemistry, 2001. 15 (2): p. 148 -150. \n\n42. W, H., et al., Isolation of L -phenylalanine dehydrogenase from Rhodococcus sp M4 and its applicationfor \n\nthe production of L -phenylalanine. Appl Microbiol Biotechnol, 1987. 26 (5): p. 409 -416. \n\n43. Kragl, U., et al., Enzyme engineering aspects of biocatalysis: Cofactor regeneration as example. \n\nBiotechnology and Bioengineering, 1996. 52 (2): p. 309 -319. [...] NAD(P) using methyl viologen and flavoenzymes. The Journal of Organic Chemistry, 1981. 46 (22): p. \n\n4622 -23. \n\n11. Yoon, S.K., et al., Laminar flow -based elec trochemical microreactor for efficient regeneration of \n\nnicotinamide cofactors for biocatalysis. Journal of the American Chemical Society, 2005. 127 (30): p. \n\n10466 -10467. \n\n12. Vuorilehto, K., S. Lutz, and C. Wandrey, Indirect electrochemical reduction of nico tinamide coenzymes. \n\nBioelectrochemistry, 2004. 65 (1): p. 1 -7. \n\n13. Obert, R. and B.C. Dave, Enzymatic conversion of carbon dioxide to methanol: Enhanced methanol \n\nproduction in silica sol -gel matrices. Journal of the American Chemical Society, 1999. 121 (51): p. \n\n12192 -12193. [...] 6-phosphogluconate dehydrogenase in Escherichia coli and its application for NADPH regeneration. \n\nMicrobial Cell Factories, 2009. 8: p. -.\n\n36. Wang, Y. and Y.H.P. Zhang, A highly active phosphoglucomutase from Clostridium thermocellum: cloning, \n\npurification, characterization and enhanced thermostability. Journal of Applied Microbiology, 2010. \n\n108 (1): p. 39 -46. \n\n37. Keseler, I.M., et al., EcoCyc: A comprehensive view of Escherichia coli biology. Nucleic Acids Res earch, \n\n2009. 37 : p. D464 -D470. \n\n38. Olah, G.A., A. Goeppert, and G.K.S. Prakash, Beyond oil and gas : the methanol economy . 2006, Weinheim \n\nan der Bergstrasse, Germany: Wiley -VCH. xiv, 290 p. \n\n39. Reuss, G., et al., Formaldehyde . Ullmann's Encyclopedia of Ind ustrial Chemistry. 2002: Wiley -VCH,",
+        "source_domain": "arxiv.org"
+      }
+    ]
+  },
+  {
+    "keyword": {
+      "tier1": "顯示技術",
+      "tier2": "micro LED",
+      "tier3": "",
+      "search_levels": [
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": "tier1+tier2",
+    "articles": [
+      {
+        "title": "An update on Micro LED - Ars Technica",
+        "url": "https://arstechnica.com/gadgets/2025/02/an-update-on-highly-anticipated-and-elusive-micro-led-displays",
+        "published_date": "",
+        "content": "# An update on highly anticipated—and elusive—Micro LED displays\n\nNew (and cheaper) Micro LED TVs have been announced.\n\nA TV with no bezels, mounted on a wall in a modern home\n\nMicro LED has become one of the most anticipated display technologies for consumer products in recent years. Using self-emissive LEDs as pixels, the backlight-free displays combine the contrast-rich capabilities of OLED with the brightness and durability potential of LCD-LED displays, and they avoid burn-in issues.\n\nWe’re often asked about the future of Micro LED and when display enthusiasts can realistically expect to own a TV or monitor with the technology. Here’s the latest on the highly anticipated—and still elusive—display technology.\n\n## Still years away [...] For the applications other than automotive, AUO’s Micro LED display technology has been applied on wearable device like smartwatch[es] for fashion… in 2023, and it is expected to be available for mass production in 2025. Moving forward, AUO plans to apply larger Micro LED displays on TVs, notebooks, and monitors in two years.\n\nDespite enthusiasm from technologists and the display community, the mainstream infatuation with OLED makes it harder for Micro LED to move into consumer products. Many shoppers already know about the benefits of OLED and may have experienced it for years. In recent years, OLED technology has also improved by getting brighter and cheaper. [...] While Micro LED could address some of OLED’s limitations, it doesn’t have the recognition of OLED in the consumer market. Any company releasing Micro LED consumer products will have to educate shoppers about the benefits of the display technology and why it’s better than OLED or even cheaper options. As such, much of the Micro LED industry is still focusing on “highly differentiating applications,” Virey said, like making specialized transparent displays for cars or advertising, very large commercial screens, and augmented reality (AR).\n\nRoss Young, CEO at Display Supply Chain Consultants (DSCC), also isn’t expecting Micro LED in commercialized monitors or laptops in 2025 and pointed to other, more affordable options taking the spotlight.",
+        "source_domain": "arstechnica.com"
+      },
+      {
+        "title": "Samsung’s Micro RGB TV isn’t real Micro LED—but it’s so good you may not even care - Ars Technica",
+        "url": "https://arstechnica.com/gadgets/2025/08/samsungs-micro-rgb-tv-proves-the-value-of-rgb-backlights-for-premium-displays",
+        "published_date": "",
+        "content": "Samsung's Micro RGB TV\nSamsung's Micro RGB TV\n\nI’m still concerned about the Micro RGB name, which carries the risk of being confused with true Micro LED. In the past, Samsung has contributed to display-market confusion with terms like QLED (an acronym that looks awfully similar to OLED). The new display technology is impressive enough; its marketing doesn’t need to evoke associations with a markedly different display type.\n\n## Hands-on with Samsung’s Micro RGB TV\n\nSeeing the Micro RGB TV in person confirmed the great potential RGB backlight tech represents. The image quality didn’t quite match what you’d see with a similar OLED or Micro LED display, but what I saw in my short time with the TV surpassed what I’d expect from the best LCD-LED TVs. [...] Because it lacks self-emissive pixels, the Micro RGB should have poorer contrast than a good Micro LED (or OLED) TV. The differing prices between Samsung’s 115-inch Micro RGB TV and 114-inch Micro LED TV ($30,000 versus $150,000) hint at the expected performance discrepancy between the display technologies. You won’t get pure blacks with an RGB LED TV, but Samsung’s TV makes a strong effort; some may not notice the difference. [...] The TV also appeared to handle the details of darker images well. A representative from Sony, which is working on a somewhat different RGB LED backlight technology, told Wired that the use of RGB LED backlights could enable displays to show an “expression of colors with moderate brightness and saturation” better than today’s OLED screens can, meaning that RGB LED TVs could be more color-accurate, including in dark scenes. Generally speaking, anything that helps LCD-LED remain competitive against OLED is good news for further development of LED-based displays, like Micro LED.\n\n[Samsung's Micro RGB TV\n\nCredit:\nScharon Harding\n\nCredit:\nScharon Harding](\n\nSamsung's Micro RGB TV",
+        "source_domain": "arstechnica.com"
+      },
+      {
+        "title": "Glasses-free 3D display with ultrawide viewing range using ... - Nature",
+        "url": "https://www.nature.com/articles/s41586-025-09752-y",
+        "published_date": "",
+        "content": "High-resolution imaging indicates high spatial frequencies28.\"), resulting in a tiny cross-sectional area of optical information flux, in turn, leading to a narrow viewing angle in 3D displays. For instance, a 24-inch 1,920 × 1,080 display with 2.1 million SBP yields a tiny FOV of about 0.1° × 0.1° at 532 nm green light wavelength. An entire light field with only 20 cm × 20 cm would require 565G SBP, far exceeding the limits of current display technologies, even with advanced light-emitting diodes (LEDs) capped at gigapixel resolutions31.\"). Despite efforts32.\"),33 hologram carriers toward photorealistic 3D holography. Laser Photon. Rev. 18, 2301173 (2024).\"), progress to enlarge SBP remains minimal compared with its astronomical requirements, and recent studies34.\"),35.\") still declare [...] ## Light-field generation [...] a, Setup diagram for the real-world ocular modelling in light-field space. This setup follows the general principles governing how humans perceive objects located at the centre of the light field. b, The display prototype of EyeReal for a light-field delivery setup. It simply features a stacked array of liquid-crystal panels without additional tailored or complex optics. Each panel includes a colour filter, a liquid-crystal layer and a thin-film transistor. The entire stack with an RGB-D sensor is positioned between orthogonally oriented polarizers and illuminated by a white light source. For clarity, the in-device 3D content is shown separately. c, Optical modulation based on multilayer liquid-crystal phase control. The polarized light passes through multiple liquid-crystal layers, each",
+        "source_domain": "www.nature.com"
+      }
+    ]
+  }
+]

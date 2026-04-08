@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>工研院電光所 國際技術情報週報 {{ report_date }}</title>
+</head>
+<body style="margin:0;padding:0;background:#f4f6f9;font-family:Arial,'Microsoft JhengHei',sans-serif;color:#1a2a3a;">
+
+<!-- Wrapper -->
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background:#f4f6f9;">
+  <tr>
+    <td align="center" style="padding:24px 16px;">
+
+      <!-- Container -->
+      <table width="640" cellpadding="0" cellspacing="0" border="0" style="max-width:640px;width:100%;">
+
+        <!-- Header -->
+        <tr>
+          <td style="background:linear-gradient(135deg,#0d2b4e 0%,#1a4a7a 100%);padding:28px 32px;border-radius:8px 8px 0 0;">
+            <p style="margin:0;font-size:18px;font-weight:bold;color:#fff;letter-spacing:0.05em;">
+              工研院電光所 國際技術情報週報
+            </p>
+            <p style="margin:8px 0 0;font-size:13px;color:rgba(255,255,255,0.8);">
+              報告日期：{{ report_date }}&nbsp;&nbsp;|&nbsp;&nbsp;搜尋模式：模式 {{ search_mode }}
+            </p>
+          </td>
+        </tr>
+
+        <!-- Body -->
+        <tr>
+          <td style="background:#fff;padding:24px 32px;border-radius:0 0 8px 8px;">
+
+            {% for tier1, articles in groups.items() %}
+            <!-- Tier1 Section -->
+            <table width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-bottom:24px;border-radius:6px;overflow:hidden;">
+              <tr>
+                <td style="background:#0d2b4e;padding:10px 16px;border-radius:6px 6px 0 0;">
+                  <p style="margin:0;font-size:14px;font-weight:bold;color:#fff;letter-spacing:0.04em;">{{ tier1 }}</p>
+                </td>
+              </tr>
+              <tr>
+                <td style="background:#f8fafc;padding:16px;border:1px solid #e0e8f0;border-top:none;border-radius:0 0 6px 6px;">
+
+                  {% if articles %}
+                    {% for art in articles %}
+                    <table width="100%" cellpadding="0" cellspacing="0" border="0"
+                      style="border-left:3px solid #2d7dd2;padding-left:12px;margin-bottom:{% if not loop.last %}16px{% else %}0{% endif %};">
+                      <tr>
+                        <td style="padding-left:12px;">
+                          <p style="margin:0 0 4px;font-size:14px;font-weight:bold;">
+                            <a href="{{ art.url }}" style="color:#1a4a7a;text-decoration:none;">{{ art.title }}</a>
+                          </p>
+                          <p style="margin:0 0 6px;font-size:12px;color:#888;">
+                            {{ art.source_domain }}
+                            {% if art.published_date %}&nbsp;·&nbsp;{{ art.published_date[:10] }}{% endif %}
+                            {% if art.relevance_score is defined %}&nbsp;·&nbsp;相關性：{{ art.relevance_score }}/10{% endif %}
+                          </p>
+                          <p style="margin:0;font-size:13px;color:#333;line-height:1.6;">{{ art.summary }}</p>
+                        </td>
+                      </tr>
+                    </table>
+                    {% endfor %}
+                  {% else %}
+                    <p style="margin:0;font-size:13px;color:#aaa;font-style:italic;">本週無相關資訊</p>
+                  {% endif %}
+
+                </td>
+              </tr>
+            </table>
+            {% endfor %}
+
+          </td>
+        </tr>
+
+        <!-- Footer -->
+        <tr>
+          <td style="padding:16px 0;text-align:center;">
+            <p style="margin:0;font-size:12px;color:#aaa;">
+              本報告由工研院電光所技術情報自動化系統生成 · {{ report_date }}
+            </p>
+          </td>
+        </tr>
+
+      </table>
+      <!-- /Container -->
+
+    </td>
+  </tr>
+</table>
+<!-- /Wrapper -->
+
+</body>
+</html>
