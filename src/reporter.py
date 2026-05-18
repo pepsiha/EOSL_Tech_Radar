@@ -36,6 +36,34 @@ class Reporter:
             f.write(html_content)
         return filepath
 
+    def generate_review_html(self, candidate_articles: list[dict], report_date: date) -> str:
+        template = self._env.get_template("review.html.j2")
+        return template.render(
+            report_date=report_date.strftime("%Y-%m-%d"),
+            candidates=candidate_articles,
+        )
+
+    def save_review_assets(
+        self,
+        review_html: str,
+        candidate_articles: list[dict],
+        report_date: date,
+    ) -> tuple[str, str]:
+        os.makedirs(DOCS_DIR, exist_ok=True)
+        html_path = os.path.join(DOCS_DIR, "review.html")
+        json_path = os.path.join(DOCS_DIR, "review_candidates.json")
+        payload = {
+            "date": report_date.strftime("%Y-%m-%d"),
+            "candidates": candidate_articles,
+        }
+        with open(html_path, "w", encoding="utf-8") as f:
+            f.write(review_html)
+        with open(json_path, "w", encoding="utf-8") as f:
+            import json
+
+            json.dump(payload, f, ensure_ascii=False, indent=2)
+        return html_path, json_path
+
     def update_index(self, report_date: date) -> str:
         """
         更新 docs/index.html。

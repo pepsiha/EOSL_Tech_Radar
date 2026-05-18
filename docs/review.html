@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EOSL Tech Radar Review 2026-05-18</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Noto Sans TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: #f3f5f7;
+      color: #17212b;
+      line-height: 1.5;
+    }
+    header {
+      background: linear-gradient(135deg, #15324b, #2f6d8f);
+      color: white;
+      padding: 24px;
+    }
+    header h1 {
+      margin: 0 0 8px;
+      font-size: 28px;
+    }
+    header p {
+      margin: 0;
+      opacity: 0.92;
+    }
+    main {
+      max-width: 1200px;
+      margin: 24px auto;
+      padding: 0 16px 40px;
+    }
+    .toolbar, .export-box {
+      background: white;
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      margin-bottom: 18px;
+    }
+    .toolbar-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .toolbar-row:last-child {
+      margin-bottom: 0;
+    }
+    button {
+      border: 0;
+      border-radius: 10px;
+      padding: 10px 14px;
+      background: #1f5f8b;
+      color: white;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    button.secondary {
+      background: #e7eef4;
+      color: #163043;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .high { background: #dff6e8; color: #11663a; }
+    .medium { background: #fff0cf; color: #8b5b00; }
+    .low { background: #fde3e3; color: #932626; }
+    .cards {
+      display: grid;
+      gap: 16px;
+    }
+    .card {
+      background: white;
+      border-radius: 16px;
+      padding: 18px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      border: 2px solid transparent;
+    }
+    .card.selected {
+      border-color: #2f6d8f;
+    }
+    .card-top {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .card-top input {
+      margin-top: 5px;
+      transform: scale(1.25);
+    }
+    .rank {
+      min-width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: #15324b;
+      color: white;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    .title {
+      margin: 0 0 6px;
+      font-size: 22px;
+      line-height: 1.25;
+    }
+    .title a {
+      color: #102232;
+      text-decoration: none;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 10px 0 12px;
+      font-size: 13px;
+      color: #4a5968;
+    }
+    .meta span {
+      background: #eef3f7;
+      padding: 4px 8px;
+      border-radius: 999px;
+    }
+    .summary {
+      font-size: 15px;
+      color: #243341;
+      margin-bottom: 10px;
+    }
+    .warning {
+      margin-top: 8px;
+      color: #8b5b00;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    textarea {
+      width: 100%;
+      min-height: 140px;
+      resize: vertical;
+      border: 1px solid #c9d4df;
+      border-radius: 12px;
+      padding: 12px;
+      font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+      font-size: 13px;
+    }
+    .hint {
+      font-size: 13px;
+      color: #536273;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EOSL Tech Radar 審稿頁</h1>
+    <p>週報日期：2026-05-18。勾選想發布的文章後，複製下方 URL 清單，貼到 GitHub Actions 的手動發布欄位。</p>
+  </header>
+
+  <main>
+    <section class="toolbar">
+      <div class="toolbar-row">
+        <button type="button" onclick="selectAllVisible()">全選目前顯示</button>
+        <button type="button" class="secondary" onclick="clearAllSelections()">全部取消</button>
+        <button type="button" class="secondary" onclick="filterConfidence('all')">全部信心</button>
+        <button type="button" class="secondary" onclick="filterConfidence('high')">只看 High</button>
+        <button type="button" class="secondary" onclick="filterConfidence('medium')">只看 Medium</button>
+        <button type="button" class="secondary" onclick="filterConfidence('low')">只看 Low</button>
+      </div>
+      <div class="toolbar-row">
+        <span class="hint">目前已勾選 <strong id="selected-count">0</strong> 篇</span>
+      </div>
+    </section>
+
+    <section id="cards" class="cards"></section>
+
+    <section class="export-box">
+      <div class="toolbar-row">
+        <button type="button" onclick="buildSelectionText()">產生發布 URL 清單</button>
+        <button type="button" class="secondary" onclick="copySelectionText()">複製到剪貼簿</button>
+      </div>
+      <p class="hint">把這段 URL 清單貼到 GitHub Actions `Run workflow` 的 `selected_urls` 欄位即可。</p>
+      <textarea id="selection-output" placeholder="勾選文章後按上方按鈕產生..."></textarea>
+    </section>
+  </main>
+
+  <script>
+    const REPORT_DATE = "2026-05-18";
+    let candidates = [];
+    let confidenceFilter = "all";
+
+    async function init() {
+      const response = await fetch("./review_candidates.json");
+      const payload = await response.json();
+      candidates = payload.candidates || [];
+      renderCards();
+    }
+
+    function renderCards() {
+      const cards = document.getElementById("cards");
+      cards.innerHTML = "";
+      candidates
+        .filter(candidate => confidenceFilter === "all" || candidate.date_confidence === confidenceFilter)
+        .forEach((candidate, index) => {
+          const card = document.createElement("article");
+          card.className = "card";
+          card.dataset.url = candidate.url;
+          card.dataset.confidence = candidate.date_confidence || "low";
+          card.innerHTML = `
+            <div class="card-top">
+              <input type="checkbox" onchange="toggleCardState(this)" />
+              <div class="rank">${candidate.rank_after_sort ?? (index + 1)}</div>
+              <div style="flex:1">
+                <h2 class="title"><a href="${candidate.url}" target="_blank" rel="noopener noreferrer">${escapeHtml(candidate.title || "")}</a></h2>
+                <div class="meta">
+                  <span>Score ${candidate.relevance_score ?? "-"}</span>
+                  <span>${escapeHtml(candidate.tier1 || "")}</span>
+                  <span>${escapeHtml(candidate.keyword_label || "")}</span>
+                  <span>${escapeHtml(candidate.source_domain || "")}</span>
+                  <span>${escapeHtml(candidate.resolved_date_utc || "unknown")}</span>
+                  <span>${escapeHtml(candidate.date_source || "unknown")}</span>
+                  <span class="pill ${candidate.date_confidence || "low"}">${escapeHtml(candidate.date_confidence || "low")}</span>
+                </div>
+                <div class="summary">${escapeHtml(candidate.summary || "")}</div>
+                ${candidate.date_warning ? `<div class="warning">date_warning: ${escapeHtml(candidate.date_warning)}</div>` : ""}
+                <div class="warning">selection_reason: ${escapeHtml(candidate.selection_reason || "")}</div>
+              </div>
+            </div>
+          `;
+          cards.appendChild(card);
+        });
+      updateSelectedCount();
+    }
+
+    function toggleCardState(checkbox) {
+      const card = checkbox.closest(".card");
+      card.classList.toggle("selected", checkbox.checked);
+      updateSelectedCount();
+    }
+
+    function selectAllVisible() {
+      document.querySelectorAll("#cards .card input[type='checkbox']").forEach(input => {
+        input.checked = true;
+        toggleCardState(input);
+      });
+    }
+
+    function clearAllSelections() {
+      document.querySelectorAll("#cards .card input[type='checkbox']").forEach(input => {
+        input.checked = false;
+        toggleCardState(input);
+      });
+    }
+
+    function filterConfidence(level) {
+      confidenceFilter = level;
+      renderCards();
+    }
+
+    function updateSelectedCount() {
+      const count = Array.from(document.querySelectorAll("#cards .card input[type='checkbox']"))
+        .filter(input => input.checked).length;
+      document.getElementById("selected-count").textContent = String(count);
+    }
+
+    function buildSelectionText() {
+      const selectedUrls = Array.from(document.querySelectorAll("#cards .card input[type='checkbox']"))
+        .filter(input => input.checked)
+        .map(input => input.closest(".card").dataset.url);
+      document.getElementById("selection-output").value = selectedUrls.join("\n");
+    }
+
+    async function copySelectionText() {
+      const textarea = document.getElementById("selection-output");
+      if (!textarea.value.trim()) {
+        buildSelectionText();
+      }
+      await navigator.clipboard.writeText(textarea.value);
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll("\"", "&quot;")
+        .replaceAll("'", "&#39;");
+    }
+
+    init();
+  </script>
+</body>
+</html>

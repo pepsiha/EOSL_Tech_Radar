@@ -2,9 +2,19 @@ name: Weekly Tech Report
 
 on:
   schedule:
-    # 每週一 UTC 00:00 = 台灣時間 08:00
     - cron: "0 0 * * 1"
-  workflow_dispatch:  # 允許手動觸發
+  workflow_dispatch:
+    inputs:
+      send_email:
+        description: "Send email after generating the report"
+        required: false
+        default: false
+        type: boolean
+      selected_urls:
+        description: "Paste newline-separated selected article URLs from review.html"
+        required: false
+        default: ""
+        type: string
 
 jobs:
   generate-report:
@@ -14,7 +24,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          # 使用 GH_PAT 以便後續 push（GITHUB_TOKEN 對 GitHub Pages branch 有限制）
           token: ${{ secrets.GH_PAT }}
           fetch-depth: 0
 
@@ -35,6 +44,10 @@ jobs:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
           GH_PAT: ${{ secrets.GH_PAT }}
           SEARCH_MODE: ${{ secrets.SEARCH_MODE }}
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_APP_PASSWORD: ${{ secrets.GMAIL_APP_PASSWORD }}
+          AUTO_SEND_EMAIL: ${{ github.event_name == 'workflow_dispatch' && inputs.send_email || 'false' }}
+          SELECTED_URLS: ${{ inputs.selected_urls }}
         run: python main.py
 
       - name: Configure git identity
@@ -44,7 +57,7 @@ jobs:
 
       - name: Commit and push new report
         run: |
-          git add data/raw/ docs/
+          git add data/raw/ data/debug/ docs/
           git diff --cached --quiet && echo "No changes to commit." && exit 0
           REPORT_DATE=$(date -u '+%Y-%m-%d')
           git commit -m "chore: weekly tech report ${REPORT_DATE} [skip ci]"

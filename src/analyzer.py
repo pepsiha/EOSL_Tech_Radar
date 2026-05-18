@@ -56,8 +56,8 @@ _PROMPT_TMPL = """你是工研院電光所的技術情報分析師。
   "summary": "<繁體中文摘要>"
 }}"""
 
-_MIN_RELEVANCE = 6
 TOP_N_ARTICLES = 5
+MIN_TOP_SCORE = 7
 
 
 class Analyzer:
@@ -66,12 +66,6 @@ class Analyzer:
         self.debug_info: dict = {}
 
     def analyze_article(self, article: dict) -> dict:
-        """
-        呼叫 Gemini 分析單篇文章。
-        回傳 article dict 並附加：
-        - relevance_score: int
-        - summary: str
-        """
         prompt = _PROMPT_TMPL.format(
             title=article.get("title", ""),
             content=article.get("content", "")[:2000],
@@ -88,91 +82,106 @@ class Analyzer:
             article["relevance_score"] = int(parsed.get("relevance_score", 5))
             article["summary"] = parsed.get("summary", "")
         except Exception as exc:
-            print(f"    [Analyzer] Gemini 分析失敗：{exc}")
+            print(f"    [Analyzer] Gemini analysis failed: {exc}")
             article["relevance_score"] = 5
-            article["summary"] = "（摘要產生失敗）"
+            article["summary"] = "Gemini 分析失敗。"
         return article
 
-    def analyze_all(self, search_results: list[dict]) -> list[dict]:
-        """
-        對所有搜尋結果執行分析。
-        search_results 結構與 Searcher.search_all() 回傳相同，
-        不設最低分門檻，最終由全域 Top N 決定入選文章。
-        """
+    def analyze_all(self, search_results: list[dict]) -> tuple[list[dict], list[dict]]:
         for result in search_results:
-            articles = result["articles"]
             analyzed: list[dict] = []
-            for art in articles:
-                print(f"    [Analyzer] 分析：{art.get('title', '')[:50]}")
+            for art in result["articles"]:
+                print(f"    [Analyzer] analyzing: {art.get('title', '')[:50]}")
                 analyzed.append(self.analyze_article(art))
             result["articles"] = analyzed
 
-        # 標題相似度去重：同一事件只保留排序最前面的那篇
         all_articles = [
-            (art, result["keyword"])
+            (art, result["keyword"], result.get("used_level"))
             for result in search_results
             for art in result["articles"]
         ]
         all_articles.sort(
-            key=lambda x: x[0].get("relevance_score", 0),
+            key=lambda x: (
+                x[0].get("relevance_score", 0),
+                self._level_priority(x[2]),
+            ),
             reverse=True,
         )
         ranked_all_articles = list(all_articles)
-        title_deduped_urls = self._deduplicate_by_title([a for a, _ in all_articles])
-        print(f"[Analyzer] 標題去重：{len(all_articles)} 篇 → {len(title_deduped_urls)} 篇")
+        title_deduped_urls = self._deduplicate_by_title([a for a, _, _ in all_articles])
+        print(f"[Analyzer] title dedup: {len(all_articles)} -> {len(title_deduped_urls)}")
 
         all_articles, duplicate_removed_articles = self._deduplicate_ranked_articles(
             ranked_all_articles,
             title_deduped_urls,
         )
 
-        # Top 10 備份（依分數排序，不限一階）
-        backup_urls = {a["url"] for a, _ in all_articles[:TOP_N_ARTICLES * 2]}
-        print(f"[Analyzer] Top {TOP_N_ARTICLES * 2} 備份，共 {len(backup_urls)} 篇")
+        backup_urls = {a["url"] for a, _, _ in all_articles[: TOP_N_ARTICLES * 2]}
+        print(f"[Analyzer] backup pool: {len(backup_urls)}")
 
-        def _enrich(art: dict, kw: dict) -> dict:
+        def _enrich(art: dict, kw: dict, used_level: str | None) -> dict:
             enriched = dict(art)
             enriched["tier1"] = kw["tier1"].split(",")[0].strip()
             label_parts = [kw["tier2"]] if kw.get("tier2") else []
             if kw.get("tier3"):
                 label_parts.append(kw["tier3"])
             enriched["keyword_label"] = " / ".join(label_parts)
+            enriched["used_level"] = used_level
             return enriched
 
-        # Phase 1：每個一階取分數最高的一篇
-        seen_tier1: set[str] = set()
+        eligible_articles = [
+            (art, kw, used_level)
+            for art, kw, used_level in all_articles
+            if art.get("relevance_score", 0) >= MIN_TOP_SCORE
+        ]
+
         top_articles: list[dict] = []
-        remaining: list[tuple] = []
+        remaining_eligible: list[tuple[dict, dict, str | None]] = []
         selection_stage_by_url: dict[str, str] = {}
         selection_reason_by_url: dict[str, str] = {}
         phase1_selected_tier1: set[str] = set()
-        for art, kw in all_articles:
+        selected_tier1_counts: dict[str, int] = {}
+
+        # Phase 1: one best article per tier1 from >= 7 score pool.
+        for art, kw, used_level in eligible_articles:
             tier1 = kw["tier1"].split(",")[0].strip()
-            if tier1 not in seen_tier1:
-                seen_tier1.add(tier1)
+            if tier1 not in phase1_selected_tier1:
                 phase1_selected_tier1.add(tier1)
-                top_articles.append(_enrich(art, kw))
+                selected_tier1_counts[tier1] = 1
+                top_articles.append(_enrich(art, kw, used_level))
                 selection_stage_by_url[art["url"]] = "phase1_tier1_pick"
-                selection_reason_by_url[art["url"]] = "highest_score_in_tier1"
+                selection_reason_by_url[art["url"]] = "highest_score_then_level_priority_in_tier1"
                 if len(top_articles) >= TOP_N_ARTICLES:
                     break
             else:
-                remaining.append((art, kw))
+                remaining_eligible.append((art, kw, used_level))
 
-        # Phase 2：若不足 5 篇，從剩餘高分文章補足（同一階可重複）
+        # Phase 2: fill remaining slots from >= 7 score pool with the same order.
+        # If only tier1-level match is left, keep at most one article per tier1.
         if len(top_articles) < TOP_N_ARTICLES:
             top_urls_set = {a["url"] for a in top_articles}
-            for art, kw in remaining:
-                if art["url"] not in top_urls_set:
-                    top_articles.append(_enrich(art, kw))
-                    top_urls_set.add(art["url"])
-                    selection_stage_by_url[art["url"]] = "phase2_fillup"
-                    selection_reason_by_url[art["url"]] = "filled_remaining_slots_by_score"
+            for art, kw, used_level in remaining_eligible:
+                tier1 = kw["tier1"].split(",")[0].strip()
+                if art["url"] in top_urls_set:
+                    continue
+                if used_level == "tier1" and selected_tier1_counts.get(tier1, 0) >= 1:
+                    continue
+
+                top_articles.append(_enrich(art, kw, used_level))
+                top_urls_set.add(art["url"])
+                selected_tier1_counts[tier1] = selected_tier1_counts.get(tier1, 0) + 1
+                selection_stage_by_url[art["url"]] = "phase2_fillup"
+                if used_level == "tier1+tier2+tier3":
+                    selection_reason_by_url[art["url"]] = "filled_remaining_slots_by_score_then_tier123_priority"
+                elif used_level == "tier1+tier2":
+                    selection_reason_by_url[art["url"]] = "filled_remaining_slots_by_score_then_tier12_priority"
+                else:
+                    selection_reason_by_url[art["url"]] = "filled_remaining_slots_by_score_tier1_once_per_tier1"
                 if len(top_articles) >= TOP_N_ARTICLES:
                     break
 
         top_urls = {a["url"] for a in top_articles}
-        print(f"[Analyzer] 全域 Top {TOP_N_ARTICLES}（Phase1 各一階最多一篇，Phase2 補足），共 {len(top_articles)} 篇")
+        print(f"[Analyzer] final top {TOP_N_ARTICLES}: {len(top_articles)}")
 
         for result in search_results:
             result["backup_articles"] = [a for a in result["articles"] if a["url"] in backup_urls]
@@ -181,17 +190,24 @@ class Analyzer:
                 result["used_level"] = None
 
         sorted_articles_debug: list[dict] = []
-        for rank, (art, kw) in enumerate(all_articles, 1):
+        eligible_urls = {art["url"] for art, _, _ in eligible_articles}
+        for rank, (art, kw, used_level) in enumerate(all_articles, 1):
             tier1 = kw["tier1"].split(",")[0].strip()
             if art["url"] in selection_stage_by_url:
                 selection_stage = selection_stage_by_url[art["url"]]
                 selection_reason = selection_reason_by_url[art["url"]]
+            elif art["url"] not in eligible_urls:
+                selection_stage = "not_selected"
+                selection_reason = "below_threshold"
+            elif used_level == "tier1" and selected_tier1_counts.get(tier1, 0) >= 1:
+                selection_stage = "not_selected"
+                selection_reason = "tier1_level_limited_to_one_article_per_tier1"
             elif tier1 in phase1_selected_tier1:
                 selection_stage = "not_selected"
-                selection_reason = "tier1_already_has_higher_score_article"
+                selection_reason = "tier1_already_has_higher_ranked_article"
             else:
                 selection_stage = "not_selected"
-                selection_reason = "top_n_reached_before_this_tier1"
+                selection_reason = "top_n_reached_after_score_and_level_sort"
 
             sorted_articles_debug.append(
                 {
@@ -200,10 +216,19 @@ class Analyzer:
                     "published_date": art.get("published_date"),
                     "resolved_date_utc": art.get("resolved_date"),
                     "date_source": art.get("date_source", "unknown"),
+                    "date_confidence": art.get("date_confidence", "low"),
+                    "date_warning": art.get("date_warning"),
                     "relevance_score": art.get("relevance_score", 0),
+                    "summary": art.get("summary", ""),
+                    "source_domain": art.get("source_domain", ""),
                     "tier1": tier1,
                     "tier2": kw.get("tier2", ""),
                     "tier3": kw.get("tier3", ""),
+                    "keyword_label": " / ".join(
+                        part for part in [kw.get("tier2", ""), kw.get("tier3", "")] if part
+                    ),
+                    "used_level": used_level,
+                    "level_priority": self._level_priority(used_level),
                     "sort_basis": "score_desc",
                     "rank_after_sort": rank,
                     "selection_stage": selection_stage,
@@ -221,60 +246,68 @@ class Analyzer:
                     "published_date": art.get("published_date"),
                     "resolved_date_utc": art.get("resolved_date"),
                     "date_source": art.get("date_source", "unknown"),
+                    "date_confidence": art.get("date_confidence", "low"),
+                    "date_warning": art.get("date_warning"),
                     "relevance_score": art.get("relevance_score", 0),
+                    "summary": art.get("summary", ""),
+                    "source_domain": art.get("source_domain", ""),
                     "tier1": kw["tier1"].split(",")[0].strip(),
                     "tier2": kw.get("tier2", ""),
                     "tier3": kw.get("tier3", ""),
+                    "keyword_label": " / ".join(
+                        part for part in [kw.get("tier2", ""), kw.get("tier3", "")] if part
+                    ),
+                    "used_level": used_level,
+                    "level_priority": self._level_priority(used_level),
                     "sort_basis": "score_desc",
                     "rank_before_dedup": rank,
                     "selection_stage": "removed_before_selection",
                     "selection_reason": removal_reason,
                 }
-                for rank, art, kw, removal_reason in duplicate_removed_articles
+                for rank, art, kw, used_level, removal_reason in duplicate_removed_articles
             ],
-            "deduped_urls": sorted({art["url"] for art, _ in all_articles}),
+            "deduped_urls": sorted({art["url"] for art, _, _ in all_articles}),
             "backup_urls": sorted(backup_urls),
             "final_top_urls": sorted(top_urls),
             "final_top_articles": top_articles,
+            "min_top_score": MIN_TOP_SCORE,
         }
 
         return search_results, top_articles
 
     def _deduplicate_ranked_articles(
         self,
-        ranked_articles: list[tuple[dict, dict]],
+        ranked_articles: list[tuple[dict, dict, str | None]],
         title_deduped_urls: set[str],
-    ) -> tuple[list[tuple[dict, dict]], list[tuple[int, dict, dict, str]]]:
-        """
-        在分數排序後做兩層去重：
-        1. 標題近似事件去重
-        2. 全域 URL 去重（同 URL 只保留排序最前面的那筆）
-        """
-        deduped_articles: list[tuple[dict, dict]] = []
-        removed_articles: list[tuple[int, dict, dict, str]] = []
+    ) -> tuple[list[tuple[dict, dict, str | None]], list[tuple[int, dict, dict, str | None, str]]]:
+        deduped_articles: list[tuple[dict, dict, str | None]] = []
+        removed_articles: list[tuple[int, dict, dict, str | None, str]] = []
         seen_urls: set[str] = set()
 
-        for rank, (art, kw) in enumerate(ranked_articles, 1):
+        for rank, (art, kw, used_level) in enumerate(ranked_articles, 1):
             url = art["url"]
             if url not in title_deduped_urls:
-                removed_articles.append((rank, art, kw, "duplicate_title_removed"))
+                removed_articles.append((rank, art, kw, used_level, "duplicate_title_removed"))
                 continue
             if url in seen_urls:
-                removed_articles.append((rank, art, kw, "duplicate_url_removed"))
+                removed_articles.append((rank, art, kw, used_level, "duplicate_url_removed"))
                 continue
 
             seen_urls.add(url)
-            deduped_articles.append((art, kw))
+            deduped_articles.append((art, kw, used_level))
 
         return deduped_articles, removed_articles
 
+    def _level_priority(self, used_level: str | None) -> int:
+        priorities = {
+            "tier1+tier2+tier3": 3,
+            "tier1+tier2": 2,
+            "tier1": 1,
+            None: 0,
+        }
+        return priorities.get(used_level, 0)
+
     def _deduplicate_by_title(self, articles: list[dict]) -> set[str]:
-        """
-        標題相似度去重（articles 已依分數由高到低排序）。
-        將標題拆成關鍵詞集合，若兩篇文章的關鍵詞 Jaccard 相似度 >= 0.5，
-        視為同一事件，只保留先出現的那篇。
-        回傳保留的 URL 集合。
-        """
         kept_urls: set[str] = set()
         kept_keyword_sets: list[set[str]] = []
 

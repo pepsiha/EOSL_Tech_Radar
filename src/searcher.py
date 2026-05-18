@@ -2,7 +2,7 @@ import itertools
 from datetime import datetime, timedelta, timezone
 from typing import Any
 import datetime as _dt
-from urllib.parse import urlparse
+from urllib.parse import parse_qs, urlparse
 
 from tavily import TavilyClient
 
@@ -49,17 +49,23 @@ class Searcher:
             return [f"{a} {b} {date_suffix}" for a, b in itertools.product(t1_list, t2_list)]
         return [f"{a} {date_suffix}" for a in t1_list]
 
-    def _is_recent(self, article: dict) -> tuple[bool, str, str | None]:
+    def _is_recent(self, article: dict) -> tuple[bool, str, str, str | None, str | None]:
         """判斷文章是否落在「今天之前的前 DAYS_RANGE 個日曆日」內。"""
         today = _dt.date.today()
         window_start = today - timedelta(days=self._days)
         window_end = today - timedelta(days=1)
-        dt, date_source = resolve_article_date(article)
+        dt, date_source, date_confidence, date_warning = resolve_article_date(article)
         if dt is None:
-            return False, date_source, None
+            return False, date_source, date_confidence, None, date_warning
 
         published_date = dt.date()
-        return window_start <= published_date <= window_end, date_source, dt.isoformat()
+        return (
+            window_start <= published_date <= window_end,
+            date_source,
+            date_confidence,
+            dt.isoformat(),
+            date_warning,
+        )
 
     def _extract_hostname(self, url: str) -> str:
         return (urlparse(url).hostname or "").lower()
@@ -68,6 +74,65 @@ class Searcher:
         if not domains:
             return True
         return any(domain in url for domain in domains)
+
+    def _is_article_like(self, url: str, title: str) -> tuple[bool, str]:
+        parsed = urlparse(url)
+        path = (parsed.path or "").strip("/")
+        path_lower = path.lower()
+        title_lower = (title or "").strip().lower()
+        query = parse_qs(parsed.query)
+
+        if not path:
+            return False, "homepage"
+
+        blocked_exact_paths = {
+            "search",
+            "search/",
+            "archive",
+            "archives",
+            "tag",
+            "tags",
+            "category",
+            "categories",
+        }
+        if path_lower in blocked_exact_paths:
+            return False, "listing_path"
+
+        blocked_segments = {
+            "search",
+            "results",
+            "result",
+            "tag",
+            "tags",
+            "category",
+            "categories",
+            "archive",
+            "archives",
+            "topics",
+            "topic",
+            "authors",
+            "author",
+            "page",
+        }
+        segments = [segment for segment in path_lower.split("/") if segment]
+        if any(segment in blocked_segments for segment in segments[:-1]):
+            return False, "listing_segment"
+
+        if "search" in path_lower or "results.asp" in path_lower:
+            return False, "search_results_page"
+
+        if any(key in query for key in ("q", "query", "search", "keyword")):
+            return False, "search_query_page"
+
+        blocked_title_markers = (
+            "news archive",
+            "search results",
+            "deep insights for chip engineers",
+        )
+        if any(marker in title_lower for marker in blocked_title_markers):
+            return False, "listing_title"
+
+        return True, "article_like"
 
     def _search_once(self, query: str, domains: list[str]) -> tuple[list[dict], dict]:
         """
@@ -101,20 +166,25 @@ class Searcher:
         for item in response.get("results", []):
             url: str = item.get("url", "")
             published: str = item.get("published_date", "")
+            title = item.get("title", "")
             article = {
-                "title": item.get("title", ""),
+                "title": title,
                 "url": url,
                 "published_date": published,
                 "content": item.get("content", ""),
             }
             domain_match = self._domain_matches(url, domains)
-            recent_pass, date_source, resolved_date = self._is_recent(article)
+            article_like, article_like_reason = self._is_article_like(url, title)
+            recent_pass, date_source, date_confidence, resolved_date, date_warning = self._is_recent(article)
             selected = True
 
             # 模式 B 事後過濾
             if self._mode == "B" and domains:
                 if not domain_match:
                     selected = False
+
+            if not article_like:
+                selected = False
 
             if not recent_pass:
                 selected = False
@@ -126,7 +196,11 @@ class Searcher:
                     "published_date": published,
                     "resolved_date_utc": resolved_date,
                     "date_source": date_source,
+                    "date_confidence": date_confidence,
+                    "date_warning": date_warning,
                     "domain_match": domain_match,
+                    "article_like": article_like,
+                    "article_like_reason": article_like_reason,
                     "recent_pass": recent_pass,
                     "selected": selected,
                 }
@@ -144,6 +218,8 @@ class Searcher:
                     "source_domain": self._extract_hostname(url),
                     "resolved_date": resolved_date,
                     "date_source": date_source,
+                    "date_confidence": date_confidence,
+                    "date_warning": date_warning,
                 }
             )
 
@@ -210,6 +286,8 @@ class Searcher:
                             "published_date": art["published_date"],
                             "resolved_date_utc": art.get("resolved_date"),
                             "date_source": art.get("date_source", "unknown"),
+                            "date_confidence": art.get("date_confidence", "low"),
+                            "date_warning": art.get("date_warning"),
                         }
                         for art in articles
                     ],

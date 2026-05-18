@@ -33,3 +33,4 @@ SHEET_SOURCES = "sources"
 # 搜尋參數
 MAX_ARTICLES_PER_KEYWORD = 3
 DAYS_RANGE = 7
+AUTO_SEND_EMAIL = os.getenv("AUTO_SEND_EMAIL", "false").lower() == "true"
