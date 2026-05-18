@@ -39,11 +39,17 @@ if os.getenv("DISABLE_SSL_VERIFY", "").lower() == "true":
 def main() -> None:
     today = date.today()
     date_str = today.strftime("%Y-%m-%d")
+    selected_urls = _parse_selected_urls(os.getenv("SELECTED_URLS", ""))
+    publish_mode = settings.AUTO_SEND_EMAIL and bool(selected_urls)
 
     print("=" * 60)
     print(f"[Start] EOSL Tech Radar run: {date_str}")
     print("=" * 60)
-    print(f"[Config] search_mode={settings.SEARCH_MODE} auto_send_email={settings.AUTO_SEND_EMAIL}")
+    print(
+        f"[Config] search_mode={settings.SEARCH_MODE} "
+        f"auto_send_email={settings.AUTO_SEND_EMAIL} "
+        f"publish_mode={publish_mode}"
+    )
 
     print("\n[Sheets] Loading Google Sheets data...")
     from src.sheets_loader import SheetsLoader
@@ -55,8 +61,63 @@ def main() -> None:
 
     print(f"[Sheets] keywords={len(keywords)} members={len(members)} domains={len(domains)}")
 
-    if not keywords:
+    if not publish_mode and not keywords:
         print("[Exit] No keywords found.")
+        return
+
+    from src.reporter import Reporter
+
+    reporter = Reporter()
+
+    if publish_mode:
+        print("\n[Publish] Loading saved review candidates from latest draft...")
+        draft_date, candidate_articles = _load_review_candidates()
+        if not candidate_articles:
+            print("[Publish] No saved review candidates found. Aborting publish run.")
+            return
+
+        top_articles = _select_candidate_articles(candidate_articles, selected_urls)
+        if not top_articles:
+            print("[Publish] None of the selected URLs matched the saved draft candidates.")
+            return
+
+        print(f"[Publish] matched_selected_articles={len(top_articles)} from draft_date={draft_date}")
+
+        html_content = reporter.generate_html(top_articles, draft_date)
+        report_path = reporter.save_report(html_content, draft_date)
+        index_path = reporter.update_index(draft_date)
+        print(f"[Report] report saved: {report_path}")
+        print(f"[Report] index updated: {index_path}")
+
+        _update_reports_json()
+
+        debug_path = _write_debug_report(
+            date_str=draft_date.strftime("%Y-%m-%d"),
+            keywords=keywords,
+            domains=domains,
+            search_debug=[],
+            analyzer_debug={
+                "mode": "publish_from_saved_review_candidates",
+                "candidate_count": len(candidate_articles),
+                "selected_url_count": len(selected_urls),
+            },
+            top_articles=top_articles,
+        )
+        print(f"[Debug] publish debug saved: {debug_path}")
+
+        if not members:
+            print("\n[Email] No members found. Skipping email send.")
+        else:
+            print(f"\n[Email] Sending report to {len(members)} recipients...")
+            from src.emailer import Emailer
+
+            emailer = Emailer()
+            emailer.send_report(members, html_content, draft_date)
+            print("[Email] Send complete.")
+
+        print("\n" + "=" * 60)
+        print("[Done] EOSL Tech Radar publish finished.")
+        print("=" * 60)
         return
 
     print("\n[Search] Running Tavily search...")
@@ -81,19 +142,8 @@ def main() -> None:
     _, top_articles = analyzer.analyze_all(search_results)
     print(f"[Analyze] top_articles={len(top_articles)}")
     candidate_articles = analyzer.debug_info.get("sorted_articles", [])
-    selected_urls = _parse_selected_urls(os.getenv("SELECTED_URLS", ""))
-    if settings.AUTO_SEND_EMAIL and selected_urls:
-        selected_articles = _select_candidate_articles(candidate_articles, selected_urls)
-        if selected_articles:
-            top_articles = selected_articles
-            print(f"[Publish] using manually selected articles: {len(top_articles)}")
-        else:
-            print("[Publish] No matching selected URLs found. Falling back to auto top articles.")
 
     print("\n[Report] Generating HTML report...")
-    from src.reporter import Reporter
-
-    reporter = Reporter()
     html_content = reporter.generate_html(top_articles, today)
     report_path = reporter.save_report(html_content, today)
     index_path = reporter.update_index(today)
@@ -172,6 +222,27 @@ def _select_candidate_articles(candidate_articles: list[dict], selected_urls: li
             )
             seen_urls.add(url)
     return selected_articles
+
+
+def _load_review_candidates() -> tuple[date, list[dict]]:
+    review_json_path = os.path.join(
+        os.path.dirname(os.path.abspath(__file__)),
+        "docs",
+        "review_candidates.json",
+    )
+    if not os.path.exists(review_json_path):
+        return date.today(), []
+
+    with open(review_json_path, "r", encoding="utf-8") as f:
+        payload = json.load(f)
+
+    draft_date_raw = payload.get("date") or date.today().strftime("%Y-%m-%d")
+    try:
+        draft_date = date.fromisoformat(draft_date_raw)
+    except ValueError:
+        draft_date = date.today()
+
+    return draft_date, payload.get("candidates", [])
 
 
 def _write_debug_report(
