@@ -8,6 +8,8 @@ import os
 import sys
 from datetime import date
 
+from config import settings
+
 # 確保 project root 在 import path 中（本機直接執行時需要）
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
@@ -41,7 +43,6 @@ def main() -> None:
     # 步驟 1：載入設定
     # ------------------------------------------------------------------
     print("\n[設定] 載入環境變數...")
-    from config import settings  # noqa: F401（觸發 dotenv 載入）
     print(f"[設定] 搜尋模式：{settings.SEARCH_MODE}")
 
     # ------------------------------------------------------------------
@@ -111,6 +112,16 @@ def main() -> None:
     # 同步更新 docs/reports.json（供 index.html 讀取清單）
     _update_reports_json()
 
+    debug_path = _write_debug_report(
+        date_str=date_str,
+        keywords=keywords,
+        domains=domains,
+        search_debug=searcher.debug_info,
+        analyzer_debug=analyzer.debug_info,
+        top_articles=top_articles,
+    )
+    print(f"[Debug] 已輸出：{debug_path}")
+
     # ------------------------------------------------------------------
     # 步驟 6：發送 Email
     # ------------------------------------------------------------------
@@ -127,6 +138,31 @@ def main() -> None:
     print("\n" + "=" * 60)
     print("[主程式] 所有步驟完成！")
     print("=" * 60)
+
+
+def _write_debug_report(
+    date_str: str,
+    keywords: list[dict],
+    domains: list[str],
+    search_debug: list[dict],
+    analyzer_debug: dict,
+    top_articles: list[dict],
+) -> str:
+    debug_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data", "debug")
+    os.makedirs(debug_dir, exist_ok=True)
+    debug_path = os.path.join(debug_dir, f"{date_str}_debug.json")
+    payload = {
+        "date": date_str,
+        "days_range": settings.DAYS_RANGE,
+        "keywords_count": len(keywords),
+        "domains": domains,
+        "search": search_debug,
+        "analyzer": analyzer_debug,
+        "top_articles": top_articles,
+    }
+    with open(debug_path, "w", encoding="utf-8") as f:
+        json.dump(payload, f, ensure_ascii=False, indent=2)
+    return debug_path
 
 
 def _update_reports_json() -> None:
