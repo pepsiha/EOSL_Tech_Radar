@@ -271,7 +271,7 @@
       const selectedUrls = Array.from(document.querySelectorAll("#cards .card input[type='checkbox']"))
         .filter(input => input.checked)
         .map(input => input.closest(".card").dataset.url);
-      document.getElementById("selection-output").value = selectedUrls.join("\n");
+      document.getElementById("selection-output").value = selectedUrls.join(",");
     }
 
     async function copySelectionText() {

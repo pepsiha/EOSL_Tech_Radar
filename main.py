@@ -8,6 +8,7 @@ Default GitHub Actions behavior should run in draft mode:
 
 import json
 import os
+import re
 import sys
 from datetime import date
 
@@ -77,9 +78,7 @@ def main() -> None:
             return
 
         top_articles = _select_candidate_articles(candidate_articles, selected_urls)
-        if not top_articles:
-            print("[Publish] None of the selected URLs matched the saved draft candidates.")
-            return
+        _validate_selected_urls_or_raise(selected_urls, top_articles)
 
         print(f"[Publish] matched_selected_articles={len(top_articles)} from draft_date={draft_date}")
 
@@ -189,7 +188,8 @@ def _parse_selected_urls(raw: str) -> list[str]:
     if not raw.strip():
         return []
     urls: list[str] = []
-    for line in raw.replace(",", "\n").splitlines():
+    normalized = re.sub(r"[,\s;]+", "\n", raw.strip())
+    for line in normalized.splitlines():
         value = line.strip()
         if value:
             urls.append(value)
@@ -222,6 +222,16 @@ def _select_candidate_articles(candidate_articles: list[dict], selected_urls: li
             )
             seen_urls.add(url)
     return selected_articles
+
+
+def _validate_selected_urls_or_raise(selected_urls: list[str], selected_articles: list[dict]) -> None:
+    if not selected_urls:
+        raise RuntimeError("Publish mode requires at least one selected URL.")
+    if not selected_articles:
+        raise RuntimeError(
+            "None of the selected URLs matched the saved review candidates. "
+            "Please regenerate the URL list from the latest review.html and try again."
+        )
 
 
 def _load_review_candidates() -> tuple[date, list[dict]]:
