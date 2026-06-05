@@ -1,0 +1,56 @@
+[
+  {
+    "keyword": {
+      "tier1": "Semiconductor",
+      "tier2": "memory",
+      "tier3": "MRAM, FRAM",
+      "search_levels": [
+        "tier1+tier2+tier3",
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": "tier1+tier2+tier3",
+    "articles": [
+      {
+        "title": "Annual Global IC Fabs And Facilities Report",
+        "url": "https://semiengineering.com/annual-global-ic-fabs-and-facilities-report",
+        "published_date": "",
+        "content": "Δ\n\n### Technical Papers\n\n   Scaling Nanoribbon Transistors with Monolayer TMDs (Stanford, Chalmers, Horiba, SLAC)June 3, 2026 by Technical Paper Link\n   Using Graph Attention for Virtual Metrology in Semiconductor Manufacturing (Intel Foundry, ASU)June 2, 2026 by Technical Paper Link\n   Surface Modification for III-V Selective Area MBE of Non-Selective Mask Materials (UT Austin, Harvard)June 2, 2026 by Technical Paper Link\n   Scaling Open-Source HW Accelerator for Deep NN Inference (UDE, Fraunhofer IMS)June 2, 2026 by Technical Paper Link\n   Moving Intelligence Closer to the Sensor Edge (IBM Research)June 2, 2026 by Technical Paper Link\n\n## Knowledge Centers _Entities, people and technologies explored_\n\nLearn More\n\n## Related Articles",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-06-03T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      }
+    ]
+  },
+  {
+    "keyword": {
+      "tier1": "Semiconductor",
+      "tier2": "Heterogeneous integration",
+      "tier3": "hybrid bonding, RDL, interposer, FOPLP",
+      "search_levels": [
+        "tier1+tier2+tier3",
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": null,
+    "articles": []
+  },
+  {
+    "keyword": {
+      "tier1": "HPC",
+      "tier2": "optical communication, data transmission",
+      "tier3": "silicon photonics, co-packaged optics, optical switching, micro-LED, TFLN",
+      "search_levels": [
+        "tier1+tier2+tier3",
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": null,
+    "articles": []
+  }
+]
