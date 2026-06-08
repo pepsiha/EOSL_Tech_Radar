@@ -1,0 +1,79 @@
+[
+  {
+    "keyword": {
+      "tier1": "Semiconductor",
+      "tier2": "memory",
+      "tier3": "MRAM, FRAM",
+      "search_levels": [
+        "tier1+tier2+tier3",
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": "tier1+tier2+tier3",
+    "articles": [
+      {
+        "title": "Annual Global IC Fabs And Facilities Report",
+        "url": "https://semiengineering.com/annual-global-ic-fabs-and-facilities-report",
+        "published_date": "",
+        "content": "Δ\n\n### Technical Papers\n\n   Read-Centric DTCO for IGZO FeFETs 3D Heterogeneous AI memories (imec, KU Leuven)June 5, 2026 by Technical Paper Link\n   Accelerating Zero-Knowledge Proof Generation With Reconfigurable Hardware (KAIST)June 5, 2026 by Technical Paper Link\n   Analyzing Rowhammer Vulnerability in Monolithic 3D IWO eDRAM for Edge (ASU, Georgia Tech)June 5, 2026 by Technical Paper Link\n   Scaling Nanoribbon Transistors with Monolayer TMDs (Stanford, Chalmers, Horiba, SLAC)June 3, 2026 by Technical Paper Link\n   Using Graph Attention for Virtual Metrology in Semiconductor Manufacturing (Intel Foundry, ASU)June 2, 2026 by Technical Paper Link\n\n## Knowledge Centers _Entities, people and technologies explored_\n\nLearn More\n\n## Related Articles",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-06-05T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      },
+      {
+        "title": "What Are FeFETs?",
+        "url": "https://semiengineering.com/what-are-fefets",
+        "published_date": "",
+        "content": "### Leave a Reply Cancel reply\n\n### Technical Papers\n\n Read-Centric DTCO for IGZO FeFETs 3D Heterogeneous AI memories (imec, KU Leuven) June 5, 2026 by Technical Paper Link\n Accelerating Zero-Knowledge Proof Generation With Reconfigurable Hardware (KAIST) June 5, 2026 by Technical Paper Link\n Analyzing Rowhammer Vulnerability in Monolithic 3D IWO eDRAM for Edge (ASU, Georgia Tech) June 5, 2026 by Technical Paper Link\n Scaling Nanoribbon Transistors with Monolayer TMDs (Stanford, Chalmers, Horiba, SLAC) June 3, 2026 by Technical Paper Link\n Using Graph Attention for Virtual Metrology in Semiconductor Manufacturing (Intel Foundry, ASU) June 2, 2026 by Technical Paper Link\n\n  \n\n## Knowledge Centers Entities, people and technologies explored\n\n  \n\n## Related Articles [...] Müller: FMC has acquired significant know-how over the past several years to overcome the FeFET challenges.\n\nRelated Stories  \n New Embedded Memories Ahead  \n Options grow as new wave of MCUs demand more capable NVM.  \n Tech Talk: Embedded Memories  \n Which type of memory is better and why.  \n Many Paths To Hafnium Oxide  \n What makes a good precursor in atomic layer deposition isn’t clear.  \n New Memories And Architectures Ahead  \n So far there is not widespread adoption, but many see change as inevitable\n\nTags: 22nm FDX 28nm eNVM FD-SOI FeFETs ferroelectric FETs FRAM GlobalFoundries high k/metal gate HKMG IEDM MCU memory Micron Moore's Law NaMLab NOR Flash Samsung Toshiba\n\n### Mark LaPedus\n\n(all posts)   \n Mark LaPedus is Executive Editor for manufacturing at Semiconductor Engineering. [...] Müller: Standard FRAM is based on a 1T-1C memory cell in which the ferroelectric film is implemented in the capacitor. FRAM has not scaled beyond the 130nm technology node due to the fact that only planar capacitors can be used and the traditional ferroelectric films are not scalable. This has prevented traditional FRAM from widespread adoption. In comparison, the hafnium oxide based FeFET from FMC is a totally different memory cell in which the ferroelectric actually replaces the gate dielectric of a CMOS transistor. With the ferroelectric film thicknesses thinned down below 5nm, it is therefore scalable to the latest technology nodes. FMC aims for a new wave of ferroelectric memories finally reaching the long-envisioned entry into mass markets.",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-06-05T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      }
+    ]
+  },
+  {
+    "keyword": {
+      "tier1": "Semiconductor",
+      "tier2": "Heterogeneous integration",
+      "tier3": "hybrid bonding, RDL, interposer, FOPLP",
+      "search_levels": [
+        "tier1+tier2+tier3",
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": null,
+    "articles": []
+  },
+  {
+    "keyword": {
+      "tier1": "HPC",
+      "tier2": "optical communication, data transmission",
+      "tier3": "silicon photonics, co-packaged optics, optical switching, micro-LED, TFLN",
+      "search_levels": [
+        "tier1+tier2+tier3",
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": "tier1+tier2+tier3",
+    "articles": [
+      {
+        "title": "Chip Industry Week in Review",
+        "url": "https://semiengineering.com/chip-industry-week-in-review-88",
+        "published_date": "",
+        "content": "Δ\n\n### Technical Papers\n\n   Read-Centric DTCO for IGZO FeFETs 3D Heterogeneous AI memories (imec, KU Leuven)June 5, 2026 by Technical Paper Link\n   Accelerating Zero-Knowledge Proof Generation With Reconfigurable Hardware (KAIST)June 5, 2026 by Technical Paper Link\n   Analyzing Rowhammer Vulnerability in Monolithic 3D IWO eDRAM for Edge (ASU, Georgia Tech)June 5, 2026 by Technical Paper Link\n   Scaling Nanoribbon Transistors with Monolayer TMDs (Stanford, Chalmers, Horiba, SLAC)June 3, 2026 by Technical Paper Link\n   Using Graph Attention for Virtual Metrology in Semiconductor Manufacturing (Intel Foundry, ASU)June 2, 2026 by Technical Paper Link\n\n## Knowledge Centers _Entities, people and technologies explored_\n\nLearn More\n\n## Related Articles [...] Learn More\n\n## Related Articles\n\n### Can A Computer Science Student Be Taught To Design Hardware?\n\n To fill the talent gap, CS majors could be taught to design hardware, and the EE curriculum could be adapted or even shortened. \n\nby Liz Allan\n\n### Advanced Packaging Limits Come Into Focus\n\n Mechanical and process control limits are now shaping what can be manufactured at scale. \n\nby Gregory Haley\n\n### Startup Funding: Q1 2026\n\n Massive rounds for AI, EDA, and manufacturing; 80 startups raise $8.4B. \n\nby Jesse Allen\n\n### All AI Data Center Interconnects Will Be Optical Within 5 Years\n\n InP and SiPho join CMOS as critical technologies. Lasers, CPO and OCS will be everywhere (indium phosphide, silicon photonics, co-packaged optics, optical circuit switch). \n\nby Geoff Tate [...] ### Markets and Money\n\nDeals:\n\n   AMDacquired Silicon Valley startup Enosemi to advance co-packaged optics and photonic integrated circuits in AI data centers.\n   Drut Technologies is collaborating with Ranovus on co-packaged optics for AI, ML and HPC computing clusters.\n   Infineon and Ather Energy signed an MoU to drive innovation in the EV industry in India.\n   EdgeModeacquiredSynthesis Analytics Production, gaining a 95MW power contract, strategic data center site, and cooling technology aimed at the AI and HPC data center market.\n\nFundings:",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-06-05T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      }
+    ]
+  }
+]
