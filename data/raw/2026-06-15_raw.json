@@ -1,0 +1,56 @@
+[
+  {
+    "keyword": {
+      "tier1": "Semiconductor",
+      "tier2": "memory",
+      "tier3": "MRAM, FRAM",
+      "search_levels": [
+        "tier1+tier2+tier3",
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": null,
+    "articles": []
+  },
+  {
+    "keyword": {
+      "tier1": "Semiconductor",
+      "tier2": "Heterogeneous integration",
+      "tier3": "hybrid bonding, RDL, interposer, FOPLP",
+      "search_levels": [
+        "tier1+tier2+tier3",
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": null,
+    "articles": []
+  },
+  {
+    "keyword": {
+      "tier1": "HPC",
+      "tier2": "optical communication, data transmission",
+      "tier3": "silicon photonics, co-packaged optics, optical switching, micro-LED, TFLN",
+      "search_levels": [
+        "tier1+tier2+tier3",
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": "tier1+tier2+tier3",
+    "articles": [
+      {
+        "title": "Advanced Packaging Evolution: Chiplet And Silicon Photonics-CPO",
+        "url": "https://semiengineering.com/advanced-packaging-evolution-chiplet-and-silicon-photonics-cpo",
+        "published_date": "",
+        "content": "### Leave a Reply Cancel reply\n\n### Technical Papers\n\n Cross-Validated Timing Analysis for Automotive CAN Networks (NYCU et al.) June 12, 2026 by Technical Paper Link\n Optimizing EUV Source Efficiency With Radiation-Hydrodynamic Simulations (U. Of Osaka et al.) June 12, 2026 by Technical Paper Link\n Refining Vision-Language Models For Lithography Defect Detection June 12, 2026 by Technical Paper Link\n Boosting EUV Conversion Efficiency With 2-Micron Dual-Beam Laser Irradiation June 12, 2026 by Technical Paper Link\n Read-Centric DTCO for IGZO FeFETs 3D Heterogeneous AI memories (imec, KU Leuven) June 5, 2026 by Technical Paper Link\n\n  \n\n## Knowledge Centers Entities, people and technologies explored\n\n  \n\n## Related Articles [...] ## Related Articles\n\n### Can A Computer Science Student Be Taught To Design Hardware?\n\nTo fill the talent gap, CS majors could be taught to design hardware, and the EE curriculum could be adapted or even shortened.\n\nby Liz Allan\n\n### Advanced Packaging Limits Come Into Focus\n\nMechanical and process control limits are now shaping what can be manufactured at scale.\n\nby Gregory Haley\n\n### Startup Funding: Q1 2026\n\nMassive rounds for AI, EDA, and manufacturing; 80 startups raise $8.4B.\n\nby Jesse Allen\n\n### All AI Data Center Interconnects Will Be Optical Within 5 Years\n\nInP and SiPho join CMOS as critical technologies. Lasers, CPO and OCS will be everywhere (indium phosphide, silicon photonics, co-packaged optics, optical circuit switch).\n\nby Geoff Tate\n\n### Making Hybrid Bonding Better",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-06-12T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      }
+    ]
+  }
+]
