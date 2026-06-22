@@ -1,27 +1,4 @@
 {
-  "date": "2026-06-15",
-  "candidates": [
-    {
-      "title": "Advanced Packaging Evolution: Chiplet And Silicon Photonics-CPO",
-      "url": "https://semiengineering.com/advanced-packaging-evolution-chiplet-and-silicon-photonics-cpo",
-      "published_date": "",
-      "resolved_date_utc": "2026-06-12T00:00:00+00:00",
-      "date_source": "content",
-      "date_confidence": "high",
-      "date_warning": null,
-      "relevance_score": 8,
-      "summary": "文章標題明確指出先進封裝、小晶片與矽光子CPO為技術演進方向。其中相關報導預測「所有AI資料中心互連將在五年內光學化」，點名矽光子、CPO、磷化銦與光學電路交換為關鍵技術。此資訊對電光所的光通訊、先進封裝、矽光子CPO及AI運算架構等研究領域具高情報價值，顯示明確技術趨勢與戰略方向。",
-      "source_domain": "semiengineering.com",
-      "tier1": "HPC",
-      "tier2": "optical communication, data transmission",
-      "tier3": "silicon photonics, co-packaged optics, optical switching, micro-LED, TFLN",
-      "keyword_label": "optical communication, data transmission / silicon photonics, co-packaged optics, optical switching, micro-LED, TFLN",
-      "used_level": "tier1+tier2+tier3",
-      "level_priority": 3,
-      "sort_basis": "score_desc",
-      "rank_after_sort": 1,
-      "selection_stage": "phase1_tier1_pick",
-      "selection_reason": "highest_score_then_level_priority_in_tier1"
-    }
-  ]
+  "date": "2026-06-22",
+  "candidates": []
 }
