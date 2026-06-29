@@ -1,0 +1,102 @@
+[
+  {
+    "keyword": {
+      "tier1": "Semiconductor",
+      "tier2": "memory",
+      "tier3": "MRAM, FRAM",
+      "search_levels": [
+        "tier1+tier2+tier3",
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": "tier1+tier2+tier3",
+    "articles": [
+      {
+        "title": "Chip Industry Week In Review - Semiconductor Engineering",
+        "url": "https://semiengineering.com/chip-industry-week-in-review-143",
+        "published_date": "",
+        "content": "| EVENTS | Date | Location |\n --- \n|\n| Scaling DRAM Technology to Meet Future Demands: System Challenges and Opportunities | June 27 | Raleigh, North Carolina |\n| International Symposium on Computer Architecture (ISCA) | June 27 – Jul 1 | Raleigh, North Carolina |\n| ALD/ALE 2026: Atomic Layer Deposition and Atomic Layer Etching | June 28 – Jul 1 | Tampa, Florida |\n| International Conference on Synthesis, Modeling, Analysis and Simulation Methods, and Applications to Circuit Design (SMACD) | June 29 – Jul 2 | Dresden, Germany |\n| SEMI Advanced Packaging Summit | Jul 15 | South Korea |\n| ITC India: International Test Conference | Jul 19 – 21 | BENGALURU |\n| The Chips to Systems Conference (DAC) | Jul 26 – 29 | Long Beach, CA | [...] ### Leave a Reply Cancel reply\n\n### Technical Papers\n\n Advancements In Atomic-Scale Plasma Processing June 22, 2026 by Technical Paper Link\n Interference Risks In Processing-Using-DRAM (U. of Tokyo, ETH Zurich, CISPA, Riken) June 22, 2026 by Technical Paper Link\n Atom Probe Framework Tracks Phase Instability In Si-Doped Gallium Oxide (SUNY, Ohio State, LLNL) June 22, 2026 by Technical Paper Link\n Event-Driven RL Targets Long-Horizon Fab Control June 21, 2026 by Technical Paper Link\n Timing Leaks In Embedded MIPS Processors (Rochester) June 21, 2026 by Technical Paper Link\n\n  \n\n## Knowledge Centers Entities, people and technologies explored\n\n  \n\n## Related Articles\n\n### Advanced Packaging Limits Come Into Focus [...] Fig.1: Intel’s ongoing research. Source: Intel Foundry\n\n### Memory\n\n CEA-Leti demonstrated 22nm FeRAM with 3D HZO ferroelectric capacitors for denser, low-power embedded memory in edge AI.\n SK Hynix shipped samples of its 12-layer HBM4E memory to major customers.\n imec reported advances in ferroelectric memory for more efficient AI chips.\n Fraunhofer IPMS and GF researchers integrated hafnium oxide-based ultra-fast ferroelectric FRAM memory into GF’s 22FDX technology node, enabling fast, energy-efficient data storage.\n NOR flash and SLC NAND contract prices more than doubled in the first half of 2026, reported TrendForce.\n\n### Global",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-06-22T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      },
+      {
+        "title": "ReRAM Seeks To Replace NOR",
+        "url": "https://semiengineering.com/reram-seeks-to-replace-nor",
+        "published_date": "",
+        "content": "### Karen Heyman\n\n(all posts)   \n Karen Heyman is a technology editor at Semiconductor Engineering.\n\n  \n\n### Leave a Reply Cancel reply\n\n### Technical Papers\n\n Advancements In Atomic-Scale Plasma Processing June 22, 2026 by Technical Paper Link\n Interference Risks In Processing-Using-DRAM (U. of Tokyo, ETH Zurich, CISPA, Riken) June 22, 2026 by Technical Paper Link\n Atom Probe Framework Tracks Phase Instability In Si-Doped Gallium Oxide (SUNY, Ohio State, LLNL) June 22, 2026 by Technical Paper Link\n Event-Driven RL Targets Long-Horizon Fab Control June 21, 2026 by Technical Paper Link\n Timing Leaks In Embedded MIPS Processors (Rochester) June 21, 2026 by Technical Paper Link\n\n  \n\n## Knowledge Centers Entities, people and technologies explored\n\n  \n\n## Related Articles",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-06-22T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      },
+      {
+        "title": "Chiplets 2026: Where Are We Today?",
+        "url": "https://semiengineering.com/chiplets-2026-where-are-we-today",
+        "published_date": "",
+        "content": "Figure 4. SRAM cells have stopped scaling.\n\nGiven the data plotted above, there is no reason to eat up valuable area in a leading-edge process for SRAM if, for example, the SRAM could be placed on a cheaper, older node die and connected by hybrid bonding. AMD’s Zen 5 and Zen 5c designs are examples of using different core dies and/or different numbers of core dies to generate new SKUs more economically.\n\nHBM is an example of using different wafer technologies, combining stacked DRAM process dies with a CMOS logic base die. CMOS Image Sensors (CIS) are another example. More versions of memory are coming — MRAM, ReRAM (resistive), and FRAM (ferro-electric) increase the number of opportunities by not limiting the process for the rest of the design. [...] ### Leave a Reply Cancel reply\n\n### Technical Papers\n\n Advancements In Atomic-Scale Plasma Processing June 22, 2026 by Technical Paper Link\n Interference Risks In Processing-Using-DRAM (U. of Tokyo, ETH Zurich, CISPA, Riken) June 22, 2026 by Technical Paper Link\n Atom Probe Framework Tracks Phase Instability In Si-Doped Gallium Oxide (SUNY, Ohio State, LLNL) June 22, 2026 by Technical Paper Link\n Event-Driven RL Targets Long-Horizon Fab Control June 21, 2026 by Technical Paper Link\n Timing Leaks In Embedded MIPS Processors (Rochester) June 21, 2026 by Technical Paper Link\n\n  \n\n## Knowledge Centers Entities, people and technologies explored\n\n  \n\n## Related Articles\n\n### Advanced Packaging Limits Come Into Focus [...] Ricardo Shiroma on Complex Mix Of Processors At The Edge\n   Cor on Glass Substrates Gain Momentum\n   Daya Young on New Antennas And Advanced ICs Needed For 6G\n   Subramanian Srikanteswara Iyer on Manufacturing At The Limits\n   Doug La Tulipe on Coloring Optical Signals For More Bandwidth In Data Centers\n   WH on The Hidden Cost Of Contact Resistance\n   Raymond Doerr on Metrology Under Pressure: Detecting Defects in Fine-Pitch Hybrid Bonding\n   Raymond Doerr on Manufacturing At The Limits\n   Mallikarjun on The Evolution of DRAM\n   Klein Miller on Democratizing Design: How The CHIPS Act Is Reshaping EDA And Semiconductor Innovation\n   Klein Miller on Lessons From 30 Years In The Trenches On The Future Of Semiconductor Manufacturing",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-06-22T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      }
+    ]
+  },
+  {
+    "keyword": {
+      "tier1": "Semiconductor",
+      "tier2": "Heterogeneous integration",
+      "tier3": "hybrid bonding, RDL, interposer, FOPLP",
+      "search_levels": [
+        "tier1+tier2+tier3",
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": "tier1+tier2",
+    "articles": [
+      {
+        "title": "Advancing Heterogeneous Integration Through Industry Roadmap ...",
+        "url": "https://semiengineering.com/advancing-heterogeneous-integration-through-industry-roadmap-improvements",
+        "published_date": "",
+        "content": "Heterogeneous integration requires comprehensive roadmaps to support collaboration across the design and manufacturing of the next generation of semiconductor products and the systems they support. A global team of researchers from a broad spectrum of industry, academia, and research institutes led by Intel has published a perspective in the March 2026 issue of Nature Reviews Electrical Engineering1, positioning that heterogeneous integration — an architecture, design, and advanced packaging approach that combines separately manufactured chips and components into a single system — is now essential to sustaining progress in AI, smartphones, and next-generation wireless communications. While HI capabilities have advanced rapidly since 2010, the authors propose that existing industry [...] ### Ravi V. Mahajan\n\n(all posts)   \n Ravi V. Mahajan is an Intel Fellow in advanced packaging technology and manufacturing at Intel.\n\n  \n\n### Leave a Reply Cancel reply\n\n### Technical Papers\n\n Advancements In Atomic-Scale Plasma Processing June 22, 2026 by Technical Paper Link\n Interference Risks In Processing-Using-DRAM (U. of Tokyo, ETH Zurich, CISPA, Riken) June 22, 2026 by Technical Paper Link\n Atom Probe Framework Tracks Phase Instability In Si-Doped Gallium Oxide (SUNY, Ohio State, LLNL) June 22, 2026 by Technical Paper Link\n Event-Driven RL Targets Long-Horizon Fab Control June 21, 2026 by Technical Paper Link\n Timing Leaks In Embedded MIPS Processors (Rochester) June 21, 2026 by Technical Paper Link\n\n  \n\n## Knowledge Centers Entities, people and technologies explored [...] ### When Semiconductor Materials Misbehave\n\nThe gap between lab performance and fab reality is growing wider as packages grow more complex.\n\nby Gregory Haley\n\n### The Sub-2nm Paradox\n\nReducing variation in manufacturing, monitoring behavior over time, and targeting specific workloads can have a big impact on power, performance, and area/cost.\n\nby Ed Sperling\n\n### TSMC Tech Symposium 2026, By The Numbers\n\nFoundry rolls out aggressive new roadmap, focusing on area, power, and latency.\n\nby Barry Pangrle\n\n### CPO Is Extending The Limits Of What’s Possible In AI Data Centers\n\nCo-packaged optics technology will have a big impact on system power and the cost of data movement.\n\nby Ann Mutschler\n\n ### Sponsors\n\n  |\n  |  |\n  |\n  |\n  |  |\n  |  |  |\n\n ### Standards/Organizations\n\n  |\n  |  |",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-06-22T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      }
+    ]
+  },
+  {
+    "keyword": {
+      "tier1": "HPC",
+      "tier2": "optical communication, data transmission",
+      "tier3": "silicon photonics, co-packaged optics, optical switching, micro-LED, TFLN",
+      "search_levels": [
+        "tier1+tier2+tier3",
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": "tier1+tier2+tier3",
+    "articles": [
+      {
+        "title": "I/O Design Challenges Grow In AI Data Centers And HPC Clusters",
+        "url": "https://semiengineering.com/i-o-design-challenges-grow-in-ai-data-centers-and-hpc-clusters",
+        "published_date": "",
+        "content": "### Leave a Reply Cancel reply\n\n### Technical Papers\n\n Advancements In Atomic-Scale Plasma Processing June 22, 2026 by Technical Paper Link\n Interference Risks In Processing-Using-DRAM (U. of Tokyo, ETH Zurich, CISPA, Riken) June 22, 2026 by Technical Paper Link\n Atom Probe Framework Tracks Phase Instability In Si-Doped Gallium Oxide (SUNY, Ohio State, LLNL) June 22, 2026 by Technical Paper Link\n Event-Driven RL Targets Long-Horizon Fab Control June 21, 2026 by Technical Paper Link\n Timing Leaks In Embedded MIPS Processors (Rochester) June 21, 2026 by Technical Paper Link\n\n  \n\n## Knowledge Centers Entities, people and technologies explored\n\n  \n\n## Related Articles\n\n### Advanced Packaging Limits Come Into Focus [...] ### When Semiconductor Materials Misbehave\n\nThe gap between lab performance and fab reality is growing wider as packages grow more complex.\n\nby Gregory Haley\n\n### The Sub-2nm Paradox\n\nReducing variation in manufacturing, monitoring behavior over time, and targeting specific workloads can have a big impact on power, performance, and area/cost.\n\nby Ed Sperling\n\n### TSMC Tech Symposium 2026, By The Numbers\n\nFoundry rolls out aggressive new roadmap, focusing on area, power, and latency.\n\nby Barry Pangrle\n\n### CPO Is Extending The Limits Of What’s Possible In AI Data Centers\n\nCo-packaged optics technology will have a big impact on system power and the cost of data movement.\n\nby Ann Mutschler\n\n ### Sponsors\n\n  |\n  |  |\n  |\n  |\n  |\n  |\n\n Advertise with us\n Advertise with us\n Advertise with us [...] MENU \n  + Home\n  + Special Reports\n  + Systems & Design\n  + Low Power-High Performance\n  + Manufacturing, Packaging & Materials\n  + Test, Measurement & Analytics\n  + Auto, Security & Edge AI\n  + Knowledge Center\n  + Videos\n  + Startup Corner\n  + Business & Startups\n  + Jobs\n  + Technical Papers\n  + Events\n  + Webinars\n  + Industry Research\n  + Newsletters\n  + Store\n  + Special Reports\n\nHome > Systems & Design > I/O Design Challenges Grow In AI Data Centers And HPC Clusters\n\nSystems & Design\n\n# I/O Design Challenges Grow In AI Data Centers And HPC Clusters\n\nPhysical I/Os can be a chokepoint for high-performance chips and high-speed interconnect protocols, requiring design tradeoffs and extra reliability measures.\n\nJune 25th, 2026 - By: Liz Allan\n\npopularity\n\nKey Takeaways:",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-06-22T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      }
+    ]
+  }
+]
