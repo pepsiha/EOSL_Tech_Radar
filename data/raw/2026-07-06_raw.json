@@ -1,0 +1,157 @@
+[
+  {
+    "keyword": {
+      "tier1": "Semiconductor",
+      "tier2": "memory",
+      "tier3": "MRAM, FRAM",
+      "search_levels": [
+        "tier1+tier2+tier3",
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": "tier1+tier2+tier3",
+    "articles": [
+      {
+        "title": "MRAM Evolves In Multiple Directions",
+        "url": "https://semiengineering.com/mram-evolves-in-multiple-directions",
+        "published_date": "",
+        "content": "### Leave a Reply Cancel reply\n\n### Technical Papers\n\n Computational Strategies for Schottky Barrier Heights Prediction (NIST, U. Maryland, Johns Hopkins) July 3, 2026 by Technical Paper Link\n LLM Agents To Refactor Software For High Level Synthesis (Carnegie Mellon, UCLA) July 3, 2026 by Technical Paper Link\n Probabilistic Memory Architecture That Bridges The Gap Between RNG Sampling and Memory Access (Notre Dame, Georgia Tech, Villanova) July 3, 2026 by Technical Paper Link\n A Self-Evolving Agent Framework That Treats Hardware Design as Repository-Level Code Evolution (Nvidia Research) June 30, 2026 by Technical Paper Link\n HW Fingerprinting Technique for Silicon Photonic ICs Using Photonic Crystal-based Density-Controlled Patterns (U. of Florida) June 29, 2026 by Technical Paper Link [...] Computational Strategies for Sch... Technical Paper Link\n\nLLM Agents To Refactor Software ... Technical Paper Link\n\n\n\n### About\n\n About us\n Contact us\n Advertising on SemiEng\n Newsletter SignUp\n\n### Navigation\n\n Homepage\n Special Reports\n Systems & Design\n Low Power-High Perf\n Manufacturing, Packaging & Materials\n Test, Measurement & Analytics\n Auto, Security & Edge AI\n\n Videos\n Jobs\n Technical Papers\n Events\n Webinars\n Knowledge Centers\n Industry Research\n Business & Startups\n Newsletters\n Store\n\n### Connect With Us\n\n Facebook\n Twitter @semiEngineering\n LinkedIn\n YouTube\n\nCopyright ©2013-2026 SMG   |  Terms of Service  |  Privacy Policy\n\nThis site uses cookies. By continuing to use our website, you consent to our Cookies Policy\n\nManage consent\n\n#### Privacy Overview [...] March 11th, 2021 - By: Bryon Moyer\n\npopularity\n\nMagnetoresistive RAM (MRAM) is one of several new non-volatile memory technologies targeting broad commercial availability, but designing MRAM into chips and systems isn’t as simple as adding other types of memory.\n\nMRAM isn’t an all-things-for-all-applications technology. It needs to be tuned for its intended purpose. MRAMs targeting flash will not do as well targeting SRAMs, and vice versa. Nevertheless, MRAMs are starting to gain significant traction. MRAM devices are already on the market, with many more implementations coming.\n\n“MRAM device physics allows application-specific tuning by trading off retention for endurance and speed,” said Cyrille Dray, senior principal engineer at Arm. “This leads to flash-like and SRAM-like forms.”",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-07-03T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      },
+      {
+        "title": "Chiplets 2026: Where Are We Today?",
+        "url": "https://semiengineering.com/chiplets-2026-where-are-we-today",
+        "published_date": "",
+        "content": "Figure 4. SRAM cells have stopped scaling.\n\nGiven the data plotted above, there is no reason to eat up valuable area in a leading-edge process for SRAM if, for example, the SRAM could be placed on a cheaper, older node die and connected by hybrid bonding. AMD’s Zen 5 and Zen 5c designs are examples of using different core dies and/or different numbers of core dies to generate new SKUs more economically.\n\nHBM is an example of using different wafer technologies, combining stacked DRAM process dies with a CMOS logic base die. CMOS Image Sensors (CIS) are another example. More versions of memory are coming — MRAM, ReRAM (resistive), and FRAM (ferro-electric) increase the number of opportunities by not limiting the process for the rest of the design. [...] ### Leave a Reply Cancel reply\n\n### Technical Papers\n\n Computational Strategies for Schottky Barrier Heights Prediction (NIST, U. Maryland, Johns Hopkins) July 3, 2026 by Technical Paper Link\n LLM Agents To Refactor Software For High Level Synthesis (Carnegie Mellon, UCLA) July 3, 2026 by Technical Paper Link\n Probabilistic Memory Architecture That Bridges The Gap Between RNG Sampling and Memory Access (Notre Dame, Georgia Tech, Villanova) July 3, 2026 by Technical Paper Link\n A Self-Evolving Agent Framework That Treats Hardware Design as Repository-Level Code Evolution (Nvidia Research) June 30, 2026 by Technical Paper Link\n HW Fingerprinting Technique for Silicon Photonic ICs Using Photonic Crystal-based Density-Controlled Patterns (U. of Florida) June 29, 2026 by Technical Paper Link [...] Mallikarjun on The Evolution of DRAM\n   Klein Miller on Democratizing Design: How The CHIPS Act Is Reshaping EDA And Semiconductor Innovation\n   Klein Miller on Lessons From 30 Years In The Trenches On The Future Of Semiconductor Manufacturing\n   Jonathan Kolber on Preparing For The Quantum Computing Age\n   Pramod Gupta on Challenges In Stacking HBM\n   Madeline Lueilwitz on Reconfigurable Single-Walled CNT FeFET (Univ. of Pennsylvania, Yonsei et al.)\n   Anne Meixner on Need For KGD Drives Singulated Die Screening\n   Capt kirk on Designing A Better Clock Network\n   Alex Martin on AI Effort And Money Misplaced\n   Hamilton Carter on AI Effort And Money Misplaced\n   Ilmu Komunikasi on Reconfigurable Single-Walled CNT FeFET (Univ. of Pennsylvania, Yonsei et al.)",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-07-03T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      }
+    ]
+  },
+  {
+    "keyword": {
+      "tier1": "Semiconductor",
+      "tier2": "Heterogeneous integration",
+      "tier3": "hybrid bonding, RDL, interposer, FOPLP",
+      "search_levels": [
+        "tier1+tier2+tier3",
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": "tier1+tier2+tier3",
+    "articles": [
+      {
+        "title": "Hybrid Bonding Basics: What Is Hybrid Bonding?",
+        "url": "https://semiengineering.com/hybrid-bonding-basics-what-is-hybrid-bonding",
+        "published_date": "",
+        "content": "### Leave a Reply Cancel reply\n\n### Technical Papers\n\n A Self-Evolving Agent Framework That Treats Hardware Design as Repository-Level Code Evolution (Nvidia Research) June 30, 2026 by Technical Paper Link\n HW Fingerprinting Technique for Silicon Photonic ICs Using Photonic Crystal-based Density-Controlled Patterns (U. of Florida) June 29, 2026 by Technical Paper Link\n LLM-driven, Formal Verification-Assisted Framework For Functional-Safety-Oriented Fault Criticality Assessment (ASU, TI) June 29, 2026 by Technical Paper Link\n Open-Source RISC-V Platform Trains Chip Designers From RTL To Silicon (ETH Z., lowRISC, U of Bologna) June 29, 2026 by Technical Paper Link\n Advancements In Atomic-Scale Plasma Processing June 22, 2026 by Technical Paper Link [...] ## Why use hybrid bonding?\n\nHybrid bonding vertically connects die-to-wafer (D2W) or wafer-to-wafer (W2W) via closely spaced copper pads. While W2W hybrid bonding has been in production for several years in image sensing, there is a strong industry push to expedite the development of D2W hybrid bonding. This development will further enable heterogeneous integration, which provides a powerful and flexible means to directly connect die of different functions, sizes, and design rules.\n\nHybrid bonding offers many advantages over other bonding techniques, including: [...] by Gregory Haley\n\n### The Sub-2nm Paradox\n\nReducing variation in manufacturing, monitoring behavior over time, and targeting specific workloads can have a big impact on power, performance, and area/cost.\n\nby Ed Sperling\n\n### TSMC Tech Symposium 2026, By The Numbers\n\nFoundry rolls out aggressive new roadmap, focusing on area, power, and latency.\n\nby Barry Pangrle\n\n### CPO Is Extending The Limits Of What’s Possible In AI Data Centers\n\nCo-packaged optics technology will have a big impact on system power and the cost of data movement.\n\nby Ann Mutschler\n\n### Memory Wall Gets Higher\n\nWith SRAM failing to scale in recent process nodes, the industry must assess its impact on all forms of computing. There are no easy solutions on the horizon.\n\nby Brian Bailey\n\n ### Sponsors",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-06-30T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      },
+      {
+        "title": "Integrated Design Ecosystem For Chiplets And Heterogeneous Integration In Advanced Packaging Technology",
+        "url": "https://semiengineering.com/integrated-design-ecosystem-for-chiplets-and-heterogeneous-integration-in-advanced-packaging-technology",
+        "published_date": "",
+        "content": "### Leave a Reply Cancel reply\n\n### Technical Papers\n\n Computational Strategies for Schottky Barrier Heights Prediction (NIST, U. Maryland, Johns Hopkins) July 3, 2026 by Technical Paper Link\n LLM Agents To Refactor Software For High Level Synthesis (Carnegie Mellon, UCLA) July 3, 2026 by Technical Paper Link\n Probabilistic Memory Architecture That Bridges The Gap Between RNG Sampling and Memory Access (Notre Dame, Georgia Tech, Villanova) July 3, 2026 by Technical Paper Link\n A Self-Evolving Agent Framework That Treats Hardware Design as Repository-Level Code Evolution (Nvidia Research) June 30, 2026 by Technical Paper Link\n HW Fingerprinting Technique for Silicon Photonic ICs Using Photonic Crystal-based Density-Controlled Patterns (U. of Florida) June 29, 2026 by Technical Paper Link [...] by Geoff Tate\n\n### The Sub-2nm Paradox\n\nReducing variation in manufacturing, monitoring behavior over time, and targeting specific workloads can have a big impact on power, performance, and area/cost.\n\nby Ed Sperling\n\n### When Semiconductor Materials Misbehave\n\nThe gap between lab performance and fab reality is growing wider as packages grow more complex.\n\nby Gregory Haley\n\n### TSMC Tech Symposium 2026, By The Numbers\n\nFoundry rolls out aggressive new roadmap, focusing on area, power, and latency.\n\nby Barry Pangrle\n\n### CPO Is Extending The Limits Of What’s Possible In AI Data Centers\n\nCo-packaged optics technology will have a big impact on system power and the cost of data movement.\n\nby Ann Mutschler\n\n### Silicon Photonics Lights The Way To More Efficient Data Centers [...] ## Knowledge Centers Entities, people and technologies explored\n\n  \n\n## Related Articles\n\n### Advanced Packaging Limits Come Into Focus\n\nMechanical and process control limits are now shaping what can be manufactured at scale.\n\nby Gregory Haley\n\n### Startup Funding: Q1 2026\n\nMassive rounds for AI, EDA, and manufacturing; 80 startups raise $8.4B.\n\nby Jesse Allen\n\n### All AI Data Center Interconnects Will Be Optical Within 5 Years\n\nInP and SiPho join CMOS as critical technologies. Lasers, CPO and OCS will be everywhere (indium phosphide, silicon photonics, co-packaged optics, optical circuit switch).\n\nby Geoff Tate\n\n### The Sub-2nm Paradox",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-07-03T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      },
+      {
+        "title": "Advanced Packaging Design For Heterogeneous Integration",
+        "url": "https://semiengineering.com/advanced-packaging-design-for-heterogeneous-integration",
+        "published_date": "",
+        "content": "### Leave a Reply Cancel reply\n\n### Technical Papers\n\n HW Fingerprinting Technique for Silicon Photonic ICs Using Photonic Crystal-based Density-Controlled Patterns (U. of Florida) June 29, 2026 by Technical Paper Link\n LLM-driven, Formal Verification-Assisted Framework For Functional-Safety-Oriented Fault Criticality Assessment (ASU, TI) June 29, 2026 by Technical Paper Link\n Open-Source RISC-V Platform Trains Chip Designers From RTL To Silicon (ETH Z., lowRISC, U of Bologna) June 29, 2026 by Technical Paper Link\n Advancements In Atomic-Scale Plasma Processing June 22, 2026 by Technical Paper Link\n Interference Risks In Processing-Using-DRAM (U. of Tokyo, ETH Zurich, CISPA, Riken) June 22, 2026 by Technical Paper Link [...] by Gregory Haley\n\n### The Sub-2nm Paradox\n\nReducing variation in manufacturing, monitoring behavior over time, and targeting specific workloads can have a big impact on power, performance, and area/cost.\n\nby Ed Sperling\n\n### TSMC Tech Symposium 2026, By The Numbers\n\nFoundry rolls out aggressive new roadmap, focusing on area, power, and latency.\n\nby Barry Pangrle\n\n### CPO Is Extending The Limits Of What’s Possible In AI Data Centers\n\nCo-packaged optics technology will have a big impact on system power and the cost of data movement.\n\nby Ann Mutschler\n\n### Memory Wall Gets Higher\n\nWith SRAM failing to scale in recent process nodes, the industry must assess its impact on all forms of computing. There are no easy solutions on the horizon.\n\nby Brian Bailey\n\n ### Sponsors [...] ## Knowledge Centers Entities, people and technologies explored\n\n  \n\n## Related Articles\n\n### Advanced Packaging Limits Come Into Focus\n\nMechanical and process control limits are now shaping what can be manufactured at scale.\n\nby Gregory Haley\n\n### Startup Funding: Q1 2026\n\nMassive rounds for AI, EDA, and manufacturing; 80 startups raise $8.4B.\n\nby Jesse Allen\n\n### All AI Data Center Interconnects Will Be Optical Within 5 Years\n\nInP and SiPho join CMOS as critical technologies. Lasers, CPO and OCS will be everywhere (indium phosphide, silicon photonics, co-packaged optics, optical circuit switch).\n\nby Geoff Tate\n\n### When Semiconductor Materials Misbehave\n\nThe gap between lab performance and fab reality is growing wider as packages grow more complex.\n\nby Gregory Haley",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-06-29T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      },
+      {
+        "title": "Making Connections In 3D Heterogeneous Integration",
+        "url": "https://semiengineering.com/making-connections-in-3d-heterogeneous-integration",
+        "published_date": "",
+        "content": "### Leave a Reply Cancel reply\n\n### Technical Papers\n\n A Self-Evolving Agent Framework That Treats Hardware Design as Repository-Level Code Evolution (Nvidia Research) June 30, 2026 by Technical Paper Link\n HW Fingerprinting Technique for Silicon Photonic ICs Using Photonic Crystal-based Density-Controlled Patterns (U. of Florida) June 29, 2026 by Technical Paper Link\n LLM-driven, Formal Verification-Assisted Framework For Functional-Safety-Oriented Fault Criticality Assessment (ASU, TI) June 29, 2026 by Technical Paper Link\n Open-Source RISC-V Platform Trains Chip Designers From RTL To Silicon (ETH Z., lowRISC, U of Bologna) June 29, 2026 by Technical Paper Link\n Advancements In Atomic-Scale Plasma Processing June 22, 2026 by Technical Paper Link [...] by Gregory Haley\n\n### The Sub-2nm Paradox\n\nReducing variation in manufacturing, monitoring behavior over time, and targeting specific workloads can have a big impact on power, performance, and area/cost.\n\nby Ed Sperling\n\n### TSMC Tech Symposium 2026, By The Numbers\n\nFoundry rolls out aggressive new roadmap, focusing on area, power, and latency.\n\nby Barry Pangrle\n\n### CPO Is Extending The Limits Of What’s Possible In AI Data Centers\n\nCo-packaged optics technology will have a big impact on system power and the cost of data movement.\n\nby Ann Mutschler\n\n### Memory Wall Gets Higher\n\nWith SRAM failing to scale in recent process nodes, the industry must assess its impact on all forms of computing. There are no easy solutions on the horizon.\n\nby Brian Bailey\n\n ### Sponsors [...] ## Knowledge Centers Entities, people and technologies explored\n\n  \n\n## Related Articles\n\n### Advanced Packaging Limits Come Into Focus\n\nMechanical and process control limits are now shaping what can be manufactured at scale.\n\nby Gregory Haley\n\n### Startup Funding: Q1 2026\n\nMassive rounds for AI, EDA, and manufacturing; 80 startups raise $8.4B.\n\nby Jesse Allen\n\n### All AI Data Center Interconnects Will Be Optical Within 5 Years\n\nInP and SiPho join CMOS as critical technologies. Lasers, CPO and OCS will be everywhere (indium phosphide, silicon photonics, co-packaged optics, optical circuit switch).\n\nby Geoff Tate\n\n### When Semiconductor Materials Misbehave\n\nThe gap between lab performance and fab reality is growing wider as packages grow more complex.\n\nby Gregory Haley",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-06-30T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      }
+    ]
+  },
+  {
+    "keyword": {
+      "tier1": "HPC",
+      "tier2": "optical communication, data transmission",
+      "tier3": "silicon photonics, co-packaged optics, optical switching, micro-LED, TFLN",
+      "search_levels": [
+        "tier1+tier2+tier3",
+        "tier1+tier2",
+        "tier1"
+      ]
+    },
+    "used_level": "tier1+tier2+tier3",
+    "articles": [
+      {
+        "title": "Optical Scale Up Fabrics Are Limited By Manufacturing, Not Architecture",
+        "url": "https://www.nextplatform.com/connect/2026/06/30/optical-scale-up-fabrics-are-limited-by-manufacturing-not-architecture/5264399",
+        "published_date": "",
+        "content": "The platform is already reaching beyond the laser source. At OFC 2026, four architecturally distinct system vendors independently requested SHIP extensions, each pursuing a different system goal: Deeper transceiver integration, advanced optical switching, high-speed modulation at scale, and integrated amplification architectures. Each needed the same underlying capability: III-V integration into the silicon photonics flow, for optical amplifiers and high-speed modulators that pure silicon cannot deliver. None of them was solving the same problem, and the common factor was the manufacturing pattern, not the device.\n\n### What Comes After The First Generation [...] Contributed by OmniScale Media.\n\ncpo connect co-packaged optics scale up scintil\n\nNEXTPLATFORM AD\n\n## Optical Scale Up Fabrics Are Limited By Manufacturing, Not Architecture\n\nJune 30, 2026\n\n## AMD Stretches Server DRAM With Flash Extended Memory\n\nJune 29, 2026\n\nstore\n\n## The End Of Boom/Bust Cycles For The Memory Market\n\nJune 26, 2026\n\nhpc\n\n## A Deep Dive On China’s “LineShine” All-CPU, Exaflops-Class Supercomputer\n\nJune 25, 2026\n\nhpc\n\n## HPE Delivers Upgraded HPC Hardware, Software For Security, Sovereignty, And Multi-Tenancy\n\nJune 24, 2026\n\nhpc\n\n## AMD And Nvidia Are Neck And Neck In HPC Supercomputing\n\nJune 23, 2026\n\n## HPE Rides The Agentic AI Wave Back Into The Datacenter\n\nJune 22, 2026\n\nfrom Everpure event\n\n## Everpure’s AI Strategy Is Almost Purely Based On Nvidia\n\nJune 19, 2026",
+        "source_domain": "www.nextplatform.com",
+        "resolved_date": "2026-06-30T00:00:00+00:00",
+        "date_source": "url",
+        "date_confidence": "high",
+        "date_warning": null
+      },
+      {
+        "title": "Lines Blurring Between Supercomputing And HPC",
+        "url": "https://semiengineering.com/lines-blurring-between-supercomputing-and-hpc",
+        "published_date": "",
+        "content": "## Knowledge Centers Entities, people and technologies explored\n\n  \n\n## Related Articles\n\n### Advanced Packaging Limits Come Into Focus\n\nMechanical and process control limits are now shaping what can be manufactured at scale.\n\nby Gregory Haley\n\n### Startup Funding: Q1 2026\n\nMassive rounds for AI, EDA, and manufacturing; 80 startups raise $8.4B.\n\nby Jesse Allen\n\n### All AI Data Center Interconnects Will Be Optical Within 5 Years\n\nInP and SiPho join CMOS as critical technologies. Lasers, CPO and OCS will be everywhere (indium phosphide, silicon photonics, co-packaged optics, optical circuit switch).\n\nby Geoff Tate\n\n### When Semiconductor Materials Misbehave\n\nThe gap between lab performance and fab reality is growing wider as packages grow more complex.\n\nby Gregory Haley [...] ### Leave a Reply Cancel reply\n\n### Technical Papers\n\n A Self-Evolving Agent Framework That Treats Hardware Design as Repository-Level Code Evolution (Nvidia Research) June 30, 2026 by Technical Paper Link\n HW Fingerprinting Technique for Silicon Photonic ICs Using Photonic Crystal-based Density-Controlled Patterns (U. of Florida) June 29, 2026 by Technical Paper Link\n LLM-driven, Formal Verification-Assisted Framework For Functional-Safety-Oriented Fault Criticality Assessment (ASU, TI) June 29, 2026 by Technical Paper Link\n Open-Source RISC-V Platform Trains Chip Designers From RTL To Silicon (ETH Z., lowRISC, U of Bologna) June 29, 2026 by Technical Paper Link\n Advancements In Atomic-Scale Plasma Processing June 22, 2026 by Technical Paper Link [...] by Gregory Haley\n\n### The Sub-2nm Paradox\n\nReducing variation in manufacturing, monitoring behavior over time, and targeting specific workloads can have a big impact on power, performance, and area/cost.\n\nby Ed Sperling\n\n### TSMC Tech Symposium 2026, By The Numbers\n\nFoundry rolls out aggressive new roadmap, focusing on area, power, and latency.\n\nby Barry Pangrle\n\n### CPO Is Extending The Limits Of What’s Possible In AI Data Centers\n\nCo-packaged optics technology will have a big impact on system power and the cost of data movement.\n\nby Ann Mutschler\n\n### Memory Wall Gets Higher\n\nWith SRAM failing to scale in recent process nodes, the industry must assess its impact on all forms of computing. There are no easy solutions on the horizon.\n\nby Brian Bailey\n\n ### Sponsors",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-06-30T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      },
+      {
+        "title": "MicroLEDs Moving From Lab to Fab",
+        "url": "https://semiengineering.com/microleds-moving-from-lab-to-fab",
+        "published_date": "",
+        "content": "### Leave a Reply Cancel reply\n\n### Technical Papers\n\n A Self-Evolving Agent Framework That Treats Hardware Design as Repository-Level Code Evolution (Nvidia Research) June 30, 2026 by Technical Paper Link\n HW Fingerprinting Technique for Silicon Photonic ICs Using Photonic Crystal-based Density-Controlled Patterns (U. of Florida) June 29, 2026 by Technical Paper Link\n LLM-driven, Formal Verification-Assisted Framework For Functional-Safety-Oriented Fault Criticality Assessment (ASU, TI) June 29, 2026 by Technical Paper Link\n Open-Source RISC-V Platform Trains Chip Designers From RTL To Silicon (ETH Z., lowRISC, U of Bologna) June 29, 2026 by Technical Paper Link\n Advancements In Atomic-Scale Plasma Processing June 22, 2026 by Technical Paper Link [...] ## Knowledge Centers Entities, people and technologies explored\n\n  \n\n## Related Articles\n\n### Advanced Packaging Limits Come Into Focus\n\nMechanical and process control limits are now shaping what can be manufactured at scale.\n\nby Gregory Haley\n\n### Startup Funding: Q1 2026\n\nMassive rounds for AI, EDA, and manufacturing; 80 startups raise $8.4B.\n\nby Jesse Allen\n\n### All AI Data Center Interconnects Will Be Optical Within 5 Years\n\nInP and SiPho join CMOS as critical technologies. Lasers, CPO and OCS will be everywhere (indium phosphide, silicon photonics, co-packaged optics, optical circuit switch).\n\nby Geoff Tate\n\n### When Semiconductor Materials Misbehave\n\nThe gap between lab performance and fab reality is growing wider as packages grow more complex.\n\nby Gregory Haley [...] by Gregory Haley\n\n### The Sub-2nm Paradox\n\nReducing variation in manufacturing, monitoring behavior over time, and targeting specific workloads can have a big impact on power, performance, and area/cost.\n\nby Ed Sperling\n\n### TSMC Tech Symposium 2026, By The Numbers\n\nFoundry rolls out aggressive new roadmap, focusing on area, power, and latency.\n\nby Barry Pangrle\n\n### CPO Is Extending The Limits Of What’s Possible In AI Data Centers\n\nCo-packaged optics technology will have a big impact on system power and the cost of data movement.\n\nby Ann Mutschler\n\n### Memory Wall Gets Higher\n\nWith SRAM failing to scale in recent process nodes, the industry must assess its impact on all forms of computing. There are no easy solutions on the horizon.\n\nby Brian Bailey\n\n ### Sponsors",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-06-30T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      },
+      {
+        "title": "All AI Data Center Interconnects Will Be Optical Within 5 Years",
+        "url": "https://semiengineering.com/all-ai-data-center-interconnects-will-be-optical-within-5-years",
+        "published_date": "",
+        "content": "OFC 2026 showed an impressive array of OCS choices and aggressive development roadmaps by all vendors. Vendors are likely to win in different market segments that best fit their strengths.\n\nCMOS execs need to understand optics and how to integrate with it\n\nOptics is taking over all high-bandwidth interconnects in the data center. GPUs/XPUs, switches, and other devices will directly couple with optical engines. OCS will supplement and partially replace existing silicon switching architectures. Optical will change the data center architecture and the architecture of CMOS chips in the data center. Winning CMOS execs will learn how to co-operate with optics and maximize their efficient use of it.\n\n_Next month we’ll finish this article covering Lasers, Fibers and SiPho Waveguides._ [...] Nvidia GTC 2026 took place simultaneously in San Jose. OFC and GTC are entangled because data center AI needs optical interconnect to keep compute fed.\n\nOptical interconnect enabled the internet with transoceanic and transcontinental high-bandwidth optical fiber connections. Optical interconnect has since taken over scale-out links in the data center. All the overhead racks with bright yellow cables are fiber optics.\n\nWe are on the verge of several more transitions that will result in all high-bandwidth data interconnects becoming optical everywhere in the data center in the next five years: [...] Δ\n\n### Technical Papers\n\n   Computational Strategies for Schottky Barrier Heights Prediction (NIST, U. Maryland, Johns Hopkins)July 3, 2026 by Technical Paper Link\n   LLM Agents To Refactor Software For High Level Synthesis (Carnegie Mellon, UCLA)July 3, 2026 by Technical Paper Link\n   Probabilistic Memory Architecture That Bridges The Gap Between RNG Sampling and Memory Access (Notre Dame, Georgia Tech, Villanova)July 3, 2026 by Technical Paper Link\n   A Self-Evolving Agent Framework That Treats Hardware Design as Repository-Level Code Evolution (Nvidia Research)June 30, 2026 by Technical Paper Link\n   HW Fingerprinting Technique for Silicon Photonic ICs Using Photonic Crystal-based Density-Controlled Patterns (U. of Florida)June 29, 2026 by Technical Paper Link",
+        "source_domain": "semiengineering.com",
+        "resolved_date": "2026-07-03T00:00:00+00:00",
+        "date_source": "content",
+        "date_confidence": "high",
+        "date_warning": null
+      }
+    ]
+  }
+]
